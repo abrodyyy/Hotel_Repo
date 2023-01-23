@@ -1,0 +1,36 @@
+-- Drop table if exists
+DROP TABLE clean_hotel;
+
+-- Create new table
+CREATE TABLE clean_hotel (
+	hotel VARCHAR,
+	is_canceled DEC,
+	lead_time DEC,
+	arrival_date_year INT,
+	arrival_date_month VARCHAR,
+	arrival_date_day_of_month DEC,
+	stays_in_weekend_nights DEC,
+	stays_in_week_nights DEC,
+	adults DEC,
+	children DEC,
+	babies DEC,
+	meal VARCHAR,
+	country VARCHAR,
+	market_segment VARCHAR,
+	is_repeated_guest DEC,
+	previous_cancellations DEC,
+	previous_bookings_not_canceled DEC,
+	booking_changes DEC,
+	deposit_type VARCHAR,
+	days_in_waiting_list DEC,
+	customer_type VARCHAR,
+	adr DECIMAL,
+	required_car_parking_spaces DEC,
+	total_of_special_requests DEC,
+	reservation_status VARCHAR
+	
+);
+
+
+-- View table columns and datatypes
+SELECT * FROM clean_hotel;
