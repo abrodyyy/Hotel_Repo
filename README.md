@@ -1,4 +1,4 @@
-# Final Project: Hotel Cancelation Forecast 
+# Final Project: Hotel Cancellation Forecast 
 
 ### Current Status of Project: Segment 1 in progress
 
@@ -22,7 +22,7 @@
 ## Background and Purpose 
 **Topic:** Can you predict if a customer is going to cancel their reservation based on their hotel booking?
 
-**Reasoning:** The hotel industry can lose a significant amount of money from canceled reservations. If they were able to predict hotel cancelations, they would be able to plan accordingly to save further financial loss. The **purpose** of this project is to find out how can we best predict hotel booking cancelations. 
+**Reasoning:** The hotel industry can lose a significant amount of money from canceled reservations. If they were able to predict hotel cancellations, they would be able to plan accordingly to save further financial loss. The **purpose** of this project is to find out how can we best predict hotel booking cancellations. 
 
 **Description of the Data:** Initially the data came from two datasets for two types of hotels: Resort and City hotels in Portugal from July 1, 2015 to August 31, 2017 ([Hotel Booking Demand Datasets](https://www.sciencedirect.com/science/article/pii/S2352340918315191)).
 
