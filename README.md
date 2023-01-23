@@ -62,6 +62,8 @@
 ## Resources
 - Original Dataset: [Hotel Bookings Dataset](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand) sourced from article [Hotel Booking Demand Datasets](https://www.sciencedirect.com/science/article/pii/S2352340918315191)
 - Technologies: Google Colab, PgAdmin, Tableau
+- Languages: Python, SQL
+- Algorithms: 
 
 ## Results
 - [Final Presentation](https://docs.google.com/presentation/d/1HDH8MzOXkqZIBVwwQJ9A0n3o-WJ2LfAWJDuUSSZJil4/edit?usp=share_link)
@@ -69,6 +71,16 @@
 - [Preprocessing Data &  Machine Learning Model Notebook](https://github.com/abrodyyy/Hotel_Repo/blob/main/Hotels_Preprocessing.ipynb)
 - Interactive Dashboard
 
+### Description of the EDA & Analysis phase 
+
 ### Preprocessing/ Cleaning Data
 
-### Machine Learning Model: Binary Logistic Regression Model
+### Machine Learning Model Results: Binary Logistic Regression Model
+- Why did you choose this model?
+- How will you train the model?
+- What’s the accuracy of the model?
+- How does the model work?
+- If statistics are involved, which ones will the analysis include, and why?
+- What would you include or change if you had more time?
+
+### Recommendations for Future Analysis
