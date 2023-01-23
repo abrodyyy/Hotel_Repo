@@ -19,7 +19,7 @@
 - Technologies: 
 
 ## Results
-- [Final Presentation](https://docs.google.com/presentation/d/1RHMZhvMSpZ7oYRmHSVeEdnCQ7pmKn72IH4aGALGjs_8/edit?usp=share_link)
+- [Final Presentation](https://docs.google.com/presentation/d/1HDH8MzOXkqZIBVwwQJ9A0n3o-WJ2LfAWJDuUSSZJil4/edit?usp=share_link)
 - Cleaning Data & Exploratory Data Analysis 
 - Machine Learning Model 
 - Interactive Dashboard
