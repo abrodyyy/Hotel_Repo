@@ -10,6 +10,15 @@
 - At least four commits per team member 
 - Presentation Requirements: topic and reasoning, description of the data, question that the team plans to answer 
 
+**Challenges:**
+- We were not able to find two cohesive datasets 
+
+**Plans for future work:**
+- Individually, continue the EDA process to find more applicable visualizations for our dataset
+- Continue Preprocessing data for Machine Learning Models (1/23)
+- Work on Machine Learning Model as a group (1/23)
+
+
 ## Background and Purpose 
 **Topic:** Can you predict if a customer is going to cancel their reservation based on their hotel booking?
 
@@ -59,3 +68,7 @@
 - [Exploratory Data Analysis Notebook](https://github.com/abrodyyy/Hotel_Repo/blob/main/Hotel_ExploratoryAnalysis.ipynb)
 - [Preprocessing Data &  Machine Learning Model Notebook](https://github.com/abrodyyy/Hotel_Repo/blob/main/Hotels_Preprocessing.ipynb)
 - Interactive Dashboard
+
+### Preprocessing/ Cleaning Data
+
+### Machine Learning Model: Binary Logistic Regression Model
