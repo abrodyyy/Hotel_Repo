@@ -1,0 +1,2597 @@
+my_log <- file("hotel_bookings_statistical_analysis.txt") # File name of output log
+sink(my_log, append = TRUE, type = "output") # Writing console output to log file
+sink(my_log, append = TRUE, type = "message")
+
+cat(readChar(rstudioapi::getSourceEditorContext()$path, # Writing currently opened R script to file
+             file.info(rstudioapi::getSourceEditorContext()$path)$size))
+
+ab_clean_hotel_df <- read.csv("~/Desktop/Analytics_Projects/Final Project/Hotel_Repo/Resources/ab_clean_hotel_df.csv")
+View(ab_clean_hotel_df)
+
+# Hotel
+# Null Hypothesis: Cancelation rate IS NOT correlated to hotel type
+# Alternate Hypothesis: Cancelation rate IS correlated to hotel type
+table(ab_clean_hotel_df$hotel, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$hotel, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# lead_time
+# Null Hypothesis: Cancelation rate IS NOT correlated to lead_time
+# Alternate Hypothesis: Cancelation rate IS correlated to lead_time
+table(ab_clean_hotel_df$lead_time, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$lead_time, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# arrival_date_year
+# Null Hypothesis: Cancelation rate IS NOT correlated to arrival_date_year
+# Alternate Hypothesis: Cancelation rate IS correlated to arrival_date_year
+table(ab_clean_hotel_df$arrival_date_year, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$arrival_date_year, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# arrival_date_month
+# Null Hypothesis: Cancelation rate IS NOT correlated to arrival_date_month
+# Alternate Hypothesis: Cancelation rate IS correlated to arrival_date_month
+table(ab_clean_hotel_df$arrival_date_month, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$arrival_date_month, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# arrival_date_week_number
+# Null Hypothesis: Cancelation rate IS NOT correlated to arrival_date_week_number
+# Alternate Hypothesis: Cancelation rate IS correlated to arrival_date_week_number
+table(ab_clean_hotel_df$arrival_date_week_number, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$arrival_date_week_number, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# arrival_date_day_of_month
+# Null Hypothesis: Cancelation rate IS NOT correlated to arrival_date_day_of_month
+# Alternate Hypothesis: Cancelation rate IS correlated to arrival_date_day_of_month
+table(ab_clean_hotel_df$arrival_date_day_of_month, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$arrival_date_day_of_month, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# stays_in_weekend_nights
+# Null Hypothesis: Cancelation rate IS NOT correlated to stays_in_weekend_nights
+# Alternate Hypothesis: Cancelation rate IS correlated to stays_in_weekend_nights
+table(ab_clean_hotel_df$stays_in_weekend_nights, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$stays_in_weekend_nights, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# stays_in_week_nights
+# Null Hypothesis: Cancelation rate IS NOT correlated to stays_in_week_nights
+# Alternate Hypothesis: Cancelation rate IS correlated to stays_in_week_nights
+table(ab_clean_hotel_df$stays_in_week_nights, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$stays_in_week_nights, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# adults - no. of adults on reservation
+# Null Hypothesis: Cancelation rate IS NOT correlated to adults
+# Alternate Hypothesis: Cancelation rate IS correlated to adults
+table(ab_clean_hotel_df$adults, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$adults, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# children - no. of children on reservation
+# Null Hypothesis: Cancelation rate IS NOT correlated to children
+# Alternate Hypothesis: Cancelation rate IS correlated to children
+table(ab_clean_hotel_df$children, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$children, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# babies - no. of babies on reservation
+# Null Hypothesis: Cancelation rate IS NOT correlated to babies
+# Alternate Hypothesis: Cancelation rate IS correlated to babies
+table(ab_clean_hotel_df$babies, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$babies, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# meal
+# Null Hypothesis: Cancelation rate IS NOT correlated to meal
+# Alternate Hypothesis: Cancelation rate IS correlated to meal
+table(ab_clean_hotel_df$meal, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$meal, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# country
+# Null Hypothesis: Cancelation rate IS NOT correlated to country
+# Alternate Hypothesis: Cancelation rate IS correlated to XcountryX
+table(ab_clean_hotel_df$country, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$country, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# market_segment
+# Null Hypothesis: Cancelation rate IS NOT correlated to market_segment
+# Alternate Hypothesis: Cancelation rate IS correlated to market_segment
+table(ab_clean_hotel_df$market_segment, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$market_segment, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# distribution_channel
+# Null Hypothesis: Cancelation rate IS NOT correlated to distribution_channel
+# Alternate Hypothesis: Cancelation rate IS correlated to distribution_channel
+table(ab_clean_hotel_df$distribution_channel, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$distribution_channel, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# is_repeated_guest
+# Null Hypothesis: Cancelation rate IS NOT correlated to is_repeated_guest
+# Alternate Hypothesis: Cancelation rate IS correlated to is_repeated_guest
+table(ab_clean_hotel_df$is_repeated_guest, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$is_repeated_guest, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# previous_cancellations
+# Null Hypothesis: Cancelation rate IS NOT correlated to previous_cancellations
+# Alternate Hypothesis: Cancelation rate IS correlated to previous_cancellations
+table(ab_clean_hotel_df$previous_cancellations, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$previous_cancellations, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# previous_bookings_not_canceled
+# Null Hypothesis: Cancelation rate IS NOT correlated to previous_bookings_not_canceled
+# Alternate Hypothesis: Cancelation rate IS correlated to previous_bookings_not_canceled
+table(ab_clean_hotel_df$previous_bookings_not_canceled, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$previous_bookings_not_canceled, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# reserved_room_type
+# Null Hypothesis: Cancelation rate IS NOT correlated to reserved_room_type
+# Alternate Hypothesis: Cancelation rate IS correlated to reserved_room_type
+table(ab_clean_hotel_df$reserved_room_type, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$reserved_room_type, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# assigned_room_type
+# Null Hypothesis: Cancelation rate IS NOT correlated to assigned_room_type
+# Alternate Hypothesis: Cancelation rate IS correlated to assigned_room_type
+table(ab_clean_hotel_df$assigned_room_type, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$assigned_room_type, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# booking_changes
+# Null Hypothesis: Cancelation rate IS NOT correlated to booking_changes
+# Alternate Hypothesis: Cancelation rate IS correlated to booking_changes
+table(ab_clean_hotel_df$booking_changes, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$booking_changes, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# deposit_type
+# Null Hypothesis: Cancelation rate IS NOT correlated to deposit_type
+# Alternate Hypothesis: Cancelation rate IS correlated to deposit_type
+table(ab_clean_hotel_df$deposit_type, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$deposit_type, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# days_in_waiting_list
+# Null Hypothesis: Cancelation rate IS NOT correlated to days_in_waiting_list
+# Alternate Hypothesis: Cancelation rate IS correlated to days_in_waiting_list
+table(ab_clean_hotel_df$days_in_waiting_list, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$days_in_waiting_list, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# customer_type
+# Null Hypothesis: Cancelation rate IS NOT correlated to customer_type
+# Alternate Hypothesis: Cancelation rate IS correlated to customer_type
+table(ab_clean_hotel_df$customer_type, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$customer_type, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# adr
+# Null Hypothesis: Cancelation rate IS NOT correlated to adr
+# Alternate Hypothesis: Cancelation rate IS correlated to adr
+table(ab_clean_hotel_df$adr, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$adr, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# required_car_parking_spaces
+# Null Hypothesis: Cancelation rate IS NOT correlated to required_car_parking_spaces
+# Alternate Hypothesis: Cancelation rate IS correlated to required_car_parking_spaces
+table(ab_clean_hotel_df$required_car_parking_spaces, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$required_car_parking_spaces, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# total_of_special_requests
+# Null Hypothesis: Cancelation rate IS NOT correlated to total_of_special_requests
+# Alternate Hypothesis: Cancelation rate IS correlated to total_of_special_requests
+table(ab_clean_hotel_df$total_of_special_requests, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$total_of_special_requests, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# reservation_status
+# Null Hypothesis: Cancelation rate IS NOT correlated to reservation_status
+# Alternate Hypothesis: Cancelation rate IS correlated to reservation_status
+table(ab_clean_hotel_df$reservation_status, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$reservation_status, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+# reservation_status_date
+# Null Hypothesis: Cancelation rate IS NOT correlated to reservation_status_date
+# Alternate Hypothesis: Cancelation rate IS correlated to reservation_status_date
+table(ab_clean_hotel_df$reservation_status_date, ab_clean_hotel_df$is_canceled)
+chisq.test(ab_clean_hotel_df$reservation_status_date, ab_clean_hotel_df$is_canceled, correct=FALSE)
+
+closeAllConnections() # Close connection to log file              
+                   0     1
+  City Hotel   46226 33076
+  Resort Hotel 28519 11077
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$hotel and ab_clean_hotel_df$is_canceled
+X-squared = 2133.8, df = 1, p-value < 2.2e-16
+
+     
+         0    1
+  0   5807  416
+  1   3076  317
+  2   1823  210
+  3   1621  181
+  4   1523  173
+  5   1339  206
+  6   1220  202
+  7   1138  172
+  8    903  221
+  9    766  219
+  10   751  222
+  11   828  220
+  12   796  278
+  13   650  168
+  14   746  214
+  15   587  251
+  16   705  234
+  17   644  233
+  18   564  261
+  19   577  261
+  20   529  218
+  21   486  189
+  22   490  215
+  23   430  212
+  24   487  178
+  25   443  209
+  26   435  235
+  27   403  244
+  28   481  339
+  29   499  210
+  30   415  243
+  31   493  189
+  32   462  228
+  33   408  234
+  34   498  330
+  35   442  212
+  36   466  197
+  37   354  319
+  38   296  279
+  39   445  227
+  40   489  231
+  41   410  195
+  42   305  159
+  43   323  156
+  44   380  253
+  45   336  201
+  46   315  180
+  47   413  155
+  48   371  134
+  49   292  186
+  50   315  211
+  51   242  124
+  52   242  191
+  53   374  156
+  54   258  214
+  55   395  180
+  56   322  354
+  57   316  141
+  58   248  152
+  59   305  215
+  60   267  169
+  61   288  223
+  62   252  161
+  63   271  127
+  64   283  138
+  65   252  195
+  66   276  187
+  67   259  180
+  68   301  263
+  69   332  226
+  70   261  123
+  71   223  199
+  72   340  190
+  73   251  151
+  74   283  236
+  75   248  177
+  76   227  124
+  77   221  136
+  78   214  170
+  79   220  137
+  80   285  155
+  81   224  135
+  82   232  161
+  83   272  104
+  84   261   84
+  85   203  141
+  86   270  191
+  87   195  249
+  88   252  195
+  89   192  123
+  90   214   79
+  91   197  136
+  92   193  248
+  93   186  164
+  94   205  128
+  95   214  178
+  96   231  137
+  97   199  157
+  98   263  157
+  99   213  217
+  100  190  157
+  101  191  158
+  102  256  202
+  103  179  198
+  104  177  236
+  105  174  237
+  106  105  150
+  107  183   81
+  108  159  108
+  109  164  132
+  110  182  115
+  111  179  154
+  112  259  164
+  113  140  232
+  114  147   98
+  115  252  168
+  116  249  146
+  117  177  119
+  118  207   83
+  119  167   74
+  120  141  111
+  121  152  112
+  122  203   85
+  123  164  112
+  124  181  127
+  125  140  107
+  126  143  106
+  127  137   94
+  128  181  123
+  129  146  151
+  130  151  146
+  131  165  134
+  132  181   78
+  133  187   78
+  134  197  187
+  135  139  147
+  136  153   85
+  137  157  128
+  138  165   92
+  139  110  111
+  140  202  134
+  141  165  109
+  142  135  124
+  143  145  156
+  144  116  103
+  145  149   93
+  146  137  105
+  147  112  105
+  148  108  170
+  149   88  107
+  150  156  166
+  151  211  152
+  152  212  100
+  153  136  106
+  154  130   49
+  155  124  132
+  156  145  161
+  157  132  113
+  158  154  169
+  159  210   84
+  160  128   78
+  161   91  139
+  162  149  154
+  163  114  103
+  164  193  165
+  165  143   97
+  166  122  174
+  167  114   75
+  168  156  166
+  169  188  149
+  170  110   65
+  171  149   61
+  172  143  108
+  173  116   99
+  174  137  126
+  175  126  153
+  176   97   62
+  177  134  118
+  178  111  214
+  179  115  117
+  180  159  111
+  181  140  154
+  182   80   75
+  183  145  148
+  184   99  102
+  185  134   76
+  186  109  138
+  187   69   62
+  188   90  161
+  189  129   90
+  190   97   63
+  191  127   47
+  192  217   76
+  193  100   75
+  194   82   38
+  195   93   94
+  196   85   55
+  197  103   70
+  198  110  140
+  199   99  113
+  200   71   72
+  201   76   69
+  202   69   41
+  203  128   67
+  204   95   64
+  205   65   89
+  206   83   63
+  207  127   85
+  208  124   67
+  209   57   42
+  210   91  113
+  211   96  150
+  212   94  104
+  213  160  143
+  214   94   64
+  215  141   68
+  216   43   44
+  217   63   38
+  218   50   55
+  219  118  132
+  220  108   41
+  221  130   93
+  222   82   69
+  223   78   61
+  224   74   53
+  225  107   38
+  226   88  102
+  227   51   40
+  228   44   32
+  229   35   61
+  230   59   48
+  231   52   40
+  232   48   35
+  233   56   93
+  234   41   28
+  235   38   39
+  236  103   47
+  237   63   49
+  238   38   88
+  239   72   82
+  240   48   97
+  241   72   45
+  242   26   27
+  243   46   58
+  244   43  106
+  245   42  158
+  246   45   29
+  247   93  113
+  248   53   29
+  249   28   24
+  250   37   54
+  251   63   63
+  252   50   24
+  253   56   49
+  254   55   36
+  255   34   25
+  256  138   26
+  257  101   31
+  258   42  103
+  259   39  131
+  260   28   70
+  261   49   56
+  262   39   87
+  263   51   51
+  264   35   31
+  265  112  118
+  266   28   45
+  267   16  107
+  268   32   46
+  269   38   45
+  270   54   61
+  271   66   25
+  272   56   87
+  273   73   87
+  274   33   92
+  275   30  134
+  276   54   95
+  277   65  253
+  278   27  111
+  279   15  150
+  280   23   56
+  281   19  103
+  282   44   35
+  283   38   85
+  284   10   22
+  285   33   35
+  286   68  121
+  287  106   30
+  288   39   71
+  289   42   50
+  290   27   82
+  291   34   26
+  292  119   77
+  293   12   32
+  294   25   50
+  295   19   89
+  296   41   19
+  297   44   60
+  298   24   25
+  299    7   37
+  300   23   70
+  301   84  106
+  302   16  131
+  303   14   31
+  304   18  163
+  305   24  144
+  306   15   19
+  307   24   57
+  308   25   33
+  309   25   79
+  310   22   23
+  311   13   68
+  312   21   65
+  313   10   71
+  314   12   76
+  315   33   99
+  316  129   71
+  317   19   78
+  318   16   33
+  319   12   23
+  320   86   40
+  321   11   53
+  322   43   57
+  323   21  127
+  324   10   10
+  325    9   42
+  326   17   30
+  327   42   46
+  328   39   34
+  329    9   26
+  330   17   84
+  331    5   11
+  332    9   41
+  333    8   51
+  334    8   46
+  335   43   72
+  336   84   83
+  337   24   68
+  338   23   21
+  339   27   45
+  340    4   16
+  341    5   37
+  342   41  104
+  343   24   12
+  344    5   62
+  345    9    5
+  346   74   32
+  347    3    9
+  348   13   22
+  349   16   46
+  350    7   91
+  351   19   83
+  352   17   14
+  353    7   28
+  354    5    4
+  355    5   35
+  356    4   27
+  357    0   18
+  358    2   71
+  359   19   25
+  360    4   23
+  361    3    7
+  362    2    0
+  363    8   20
+  364   85   78
+  365   11   54
+  366    2    1
+  367    5   20
+  368    7   33
+  370    1    0
+  371    0    1
+  372    0   44
+  373    2   27
+  374    1   20
+  375    1    1
+  376    3    0
+  377   69   20
+  378    0   19
+  379    5   63
+  380    0    1
+  381    2    3
+  382    2    0
+  383   47   25
+  384    2   23
+  385    8   21
+  386  120   60
+  387    0    1
+  388   20    0
+  389    2    1
+  390    3    1
+  391    0   55
+  393    0   85
+  394    5   10
+  395   20   34
+  396   67   18
+  397   16    1
+  398    0   33
+  399    1    1
+  400    1    0
+  403    0    2
+  405   66   63
+  406    4    2
+  407    2   27
+  408    1   10
+  409   21    4
+  410    0   10
+  411    0   24
+  412    0   32
+  414   64   41
+  418   35   25
+  419    0   32
+  420    0   57
+  422   10   19
+  423   74   34
+  424    1    0
+  426    0   32
+  429   14    1
+  433    0   52
+  434   22    5
+  435    0    1
+  437    0   40
+  440    0   32
+  443    0   37
+  444    0   40
+  445    3    0
+  447    0   32
+  448   21    5
+  450    0   11
+  451   20   46
+  454    1   32
+  457   66   22
+  458    0    1
+  460    3    0
+  461    0   32
+  462   21   25
+  463    1    0
+  464    4   25
+  465   16   15
+  467    0   10
+  468   30   75
+  471    0    6
+  475    0   32
+  476   15   11
+  478    2   11
+  479   20   13
+  482    0   17
+  489    0   17
+  490    0    9
+  493    0   10
+  496    0   17
+  503    0   17
+  504   21    5
+  507    0   10
+  510    0   17
+  517    0   17
+  518   22    4
+  521    0   10
+  524    0   17
+  531    0   17
+  532    1    0
+  538    0   17
+  542   23    0
+  545    0   17
+  552    0   17
+  559    0   17
+  566    0   17
+  573    0   17
+  580    0   17
+  587    0   17
+  594    0   17
+  601    0   17
+  605    0   30
+  608    0   17
+  615    0   17
+  622    0   17
+  626    0   30
+  629    0   17
+  709    1    0
+  737    1    0
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$lead_time and ab_clean_hotel_df$is_canceled
+X-squared = 18007, df = 478, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$lead_time, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+      
+           0     1
+  2015 13753  8106
+  2016 36122 20313
+  2017 24870 15734
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$arrival_date_year and ab_clean_hotel_df$is_canceled
+X-squared = 76.876, df = 2, p-value < 2.2e-16
+
+           
+               0    1
+  April     6533 4512
+  August    8618 5234
+  December  4365 2363
+  February  5317 2695
+  January   4068 1806
+  July      7892 4736
+  June      6393 4534
+  March     6591 3148
+  May       7102 4677
+  November  4632 2120
+  October   6867 4228
+  September 6367 4100
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$arrival_date_month and ab_clean_hotel_df$is_canceled
+X-squared = 562.08, df = 11, p-value < 2.2e-16
+
+    
+        0    1
+  1   691  353
+  2   819  394
+  3   965  335
+  4   963  506
+  5   951  425
+  6  1101  385
+  7  1411  684
+  8  1411  792
+  9  1382  724
+  10 1405  737
+  11 1442  618
+  12 1435  630
+  13 1526  882
+  14 1421  830
+  15 1631 1042
+  16 1425  976
+  17 1621 1183
+  18 1600 1309
+  19 1536  863
+  20 1565 1218
+  21 1789 1060
+  22 1530 1016
+  23 1547 1070
+  24 1473 1022
+  25 1418 1241
+  26 1529  861
+  27 1672  985
+  28 1797 1048
+  29 1742 1015
+  30 1840 1240
+  31 1738  994
+  32 1876 1163
+  33 2067 1504
+  34 1994 1044
+  35 1667  923
+  36 1348  798
+  37 1348  876
+  38 1617 1038
+  39 1586  987
+  40 1393  998
+  41 1606 1086
+  42 1675 1059
+  43 1442  897
+  44 1508  745
+  45 1171  761
+  46  975  589
+  47 1296  375
+  48 1121  374
+  49 1109  665
+  50  900  593
+  51  669  246
+  52  836  351
+  53 1165  643
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$arrival_date_week_number and ab_clean_hotel_df$is_canceled
+X-squared = 1096.2, df = 52, p-value < 2.2e-16
+
+    
+        0    1
+  1  2165 1444
+  2  2653 1384
+  3  2290 1543
+  4  2398 1349
+  5  2630 1664
+  6  2539 1274
+  7  2217 1440
+  8  2261 1647
+  9  2532 1550
+  10 2373 1181
+  11 2411 1179
+  12 2533 1544
+  13 2402 1321
+  14 2339 1460
+  15 2506 1655
+  16 2516 1542
+  17 2555 1835
+  18 2626 1360
+  19 2573 1468
+  20 2541 1478
+  21 2440 1314
+  22 2243 1341
+  23 2433 1175
+  24 2482 1498
+  25 2664 1480
+  26 2511 1626
+  27 2373 1414
+  28 2417 1510
+  29 2305 1262
+  30 2378 1455
+  31 1439  760
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$arrival_date_day_of_month and ab_clean_hotel_df$is_canceled
+X-squared = 321.65, df = 30, p-value < 2.2e-16
+
+    
+         0     1
+  0  32219 19461
+  1  19528 10998
+  2  20784 12465
+  3    810   443
+  4   1252   597
+  5     35    43
+  6     66    87
+  7      5    14
+  8     26    34
+  9      4     7
+  10     5     2
+  12     4     1
+  13     3     0
+  14     2     0
+  16     2     1
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$stays_in_weekend_nights and ab_clean_hotel_df$is_canceled
+X-squared = 108.28, df = 14, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$stays_in_weekend_nights, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+    
+         0     1
+  0   5693  1900
+  1  20271  9820
+  2  18707 14867
+  3  13720  8483
+  4   6060  3494
+  5   7205  3846
+  6    909   582
+  7    704   323
+  8    435   219
+  9    136    95
+  10   735   295
+  11    21    34
+  12    19    23
+  13    16    11
+  14     4    31
+  15    42    43
+  16     5    11
+  17     2     2
+  18     1     5
+  19    15    29
+  20    24    17
+  21     4    11
+  22     0     7
+  24     0     3
+  25     6     0
+  26     1     0
+  30     4     1
+  32     1     0
+  33     1     0
+  34     1     0
+  35     1     0
+  40     1     1
+  41     1     0
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$stays_in_week_nights and ab_clean_hotel_df$is_canceled
+X-squared = 1692.4, df = 32, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$stays_in_week_nights, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+    
+         0     1
+  0    294    99
+  1  16076  6659
+  2  54282 35213
+  3   4047  2150
+  4     46    16
+  5      0     2
+  6      0     1
+  10     0     1
+  20     0     2
+  26     0     5
+  27     0     2
+  40     0     1
+  50     0     1
+  55     0     1
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$adults and ab_clean_hotel_df$is_canceled
+X-squared = 857.2, df = 13, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$adults, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+    
+         0     1
+  0  69292 41027
+  1   3285  1567
+  2   2109  1541
+  3     59    17
+  10     0     1
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$children and ab_clean_hotel_df$is_canceled
+X-squared = 98.015, df = 4, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$children, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+    
+         0     1
+  0  73998 43986
+  1    733   165
+  2     12     2
+  9      1     0
+  10     1     0
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$babies and ab_clean_hotel_df$is_canceled
+X-squared = 140.78, df = 4, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$babies, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+           
+                0     1
+  BB        57411 34452
+  FB          320   478
+  HB         9453  4981
+  SC         6682  3956
+  Undefined   879   286
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$meal and ab_clean_hotel_df$is_canceled
+X-squared = 304.2, df = 4, p-value < 2.2e-16
+
+     
+          0     1
+  ABW     2     0
+  AGO   157   205
+  AIA     1     0
+  ALB    10     2
+  AND     2     5
+  ARE     8    43
+  ARG   160    54
+  ARM     6     2
+  ASM     1     0
+  ATA     2     0
+  ATF     1     0
+  AUS   319   107
+  AUT  1033   230
+  AZE     8     9
+  BDI     1     0
+  BEL  1868   474
+  BEN     0     3
+  BFA     1     0
+  BGD     3     9
+  BGR    63    12
+  BHR     1     4
+  BHS     1     0
+  BIH    10     3
+  BLR    17     9
+  BOL    10     0
+  BRA  1394   830
+  BRB     4     0
+  BWA     1     0
+  CAF     5     0
+  CHE  1302   428
+  CHL    49    16
+  CHN   537   462
+  CIV     4     2
+  CMR    10     0
+  CN   1025   254
+  COL    48    23
+  COM     2     0
+  CPV    12    12
+  CRI    18     1
+  CUB     8     0
+  CYM     1     0
+  CYP    40    11
+  CZE   134    37
+  DEU  6069  1218
+  DJI     1     0
+  DMA     1     0
+  DNK   326   109
+  DOM     6     8
+  DZA    82    21
+  ECU    19     8
+  EGY    21    11
+  ESP  6391  2177
+  EST    65    18
+  ETH     2     1
+  FIN   378    69
+  FJI     0     1
+  FRA  8481  1934
+  FRO     1     4
+  GAB     2     2
+  GBR  9676  2453
+  GEO     7    15
+  GGY     0     3
+  GHA     2     2
+  GIB     7    11
+  GLP     0     2
+  GNB     8     1
+  GRC    93    35
+  GTM     4     0
+  GUY     1     0
+  HKG     3    26
+  HND     0     1
+  HRV    75    25
+  HUN   153    77
+  IDN    11    24
+  IMN     0     2
+  IND   117    35
+  IRL  2543   832
+  IRN    60    23
+  IRQ    14     0
+  ISL    53     4
+  ISR   500   169
+  ITA  2433  1333
+  JAM     6     0
+  JEY     0     8
+  JOR    18     3
+  JPN   169    28
+  KAZ    14     5
+  KEN     4     2
+  KHM     0     2
+  KIR     1     0
+  KNA     2     0
+  KOR    78    55
+  KWT    10     6
+  LAO     2     0
+  LBN    22     9
+  LBY     8     0
+  LCA     1     0
+  LIE     2     1
+  LKA     7     0
+  LTU    74     7
+  LUX   178   109
+  LVA    46     9
+  MAC     1    15
+  MAR   150   109
+  MCO     3     1
+  MDG     1     0
+  MDV     3     9
+  MEX    75    10
+  MKD     8     2
+  MLI     1     0
+  MLT    13     5
+  MMR     1     0
+  MNE     3     2
+  MOZ    48    19
+  MRT     1     0
+  MUS     6     1
+  MWI     2     0
+  MYS    25     3
+  MYT     0     2
+  NAM     1     0
+  NCL     1     0
+  NGA    13    21
+  NIC     0     1
+  NLD  1717   387
+  NOR   426   181
+  NPL     1     0
+  NZL    68     6
+  OMN    14     4
+  PAK     5     9
+  PAN     9     0
+  PER    23     6
+  PHL    15    25
+  PLW     1     0
+  POL   704   215
+  PRI    10     2
+  PRT 21071 27515
+  PRY     4     0
+  PYF     1     0
+  QAT     4    11
+  ROU   366   134
+  RUS   393   239
+  RWA     2     0
+  SAU    15    33
+  SDN     1     0
+  SEN     3     8
+  SGP    23    16
+  SLE     1     0
+  SLV     2     0
+  SMR     1     0
+  SRB    98     3
+  STP     2     0
+  SUR     5     0
+  SVK    41    24
+  SVN    42    15
+  SWE   797   227
+  SYC     1     1
+  SYR     3     0
+  TGO     2     0
+  THA    41    18
+  TJK     1     8
+  TMP     2     1
+  TUN    20    19
+  TUR   146   102
+  TWN    37    14
+  TZA     2     3
+  UGA     2     0
+  UKR    48    20
+  UMI     0     1
+  URY    23     9
+  USA  1596   501
+  UZB     2     2
+  VEN    14    12
+  VGB     0     1
+  VNM     6     2
+  ZAF    49    31
+  ZMB     1     1
+  ZWE     2     2
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$country and ab_clean_hotel_df$is_canceled
+X-squared = 15431, df = 176, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$country, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+               
+                    0     1
+  Aviation        185    52
+  Complementary   644    90
+  Corporate      4133   978
+  Direct        10528  1920
+  Groups         7709 12097
+  Offline TA/TO 15882  8278
+  Online TA     35664 20738
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$market_segment and ab_clean_hotel_df$is_canceled
+X-squared = 8392.7, df = 6, p-value < 2.2e-16
+
+           
+                0     1
+  Corporate  5037  1454
+  Direct    11940  2543
+  GDS         156    37
+  TA/TO     57611 40119
+  Undefined     1     0
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$distribution_channel and ab_clean_hotel_df$is_canceled
+X-squared = 3650.5, df = 4, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$distribution_channel, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+   
+        0     1
+  0 71491 43601
+  1  3254   552
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$is_repeated_guest and ab_clean_hotel_df$is_canceled
+X-squared = 862.67, df = 1, p-value < 2.2e-16
+
+    
+         0     1
+  0  74216 38235
+  1    326  5691
+  2     76    37
+  3     45    20
+  4     24     7
+  5     17     2
+  6     15     7
+  11    25    10
+  13     1    11
+  14     0    14
+  19     0    19
+  21     0     1
+  24     0    48
+  25     0    25
+  26     0    26
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$previous_cancellations and ab_clean_hotel_df$is_canceled
+X-squared = 9231.3, df = 14, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$previous_cancellations, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+    
+         0     1
+  0  71535 43966
+  1   1377    75
+  2    507    29
+  3    287    14
+  4    199    10
+  5    160    10
+  6    108     3
+  7     79     5
+  8     64     3
+  9     57     0
+  10    44     7
+  11    36     5
+  12    34     3
+  13    28     2
+  14    26     2
+  15    19     2
+  16    18     1
+  17    14     1
+  18    12     0
+  19    13     0
+  20    11     0
+  21    12     0
+  22     9     0
+  23     6     0
+  24     9     0
+  25     9     8
+  26     6     1
+  27     7     2
+  28     7     0
+  29     4     1
+  30     4     0
+  31     2     0
+  32     2     0
+  33     1     0
+  34     1     0
+  35     1     0
+  36     1     0
+  37     1     0
+  38     1     0
+  39     1     0
+  40     1     0
+  41     1     0
+  42     1     0
+  43     1     0
+  44     1     1
+  45     1     0
+  46     1     0
+  47     1     0
+  48     1     1
+  49     1     0
+  50     1     0
+  51     1     0
+  52     1     0
+  53     1     0
+  54     1     0
+  55     1     0
+  56     1     0
+  57     1     0
+  58     1     1
+  59     1     0
+  60     1     0
+  61     1     0
+  62     1     0
+  63     1     0
+  64     1     0
+  65     1     0
+  66     1     0
+  67     1     0
+  68     1     0
+  69     1     0
+  70     1     0
+  71     1     0
+  72     1     0
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$previous_bookings_not_canceled and ab_clean_hotel_df$is_canceled
+X-squared = 1523.6, df = 72, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$previous_bookings_not_canceled,  :
+  Chi-squared approximation may be incorrect
+   
+        0     1
+  A 52022 33579
+  B   750   364
+  C   623   308
+  D 13072  6101
+  E  4588  1909
+  F  2010   880
+  G  1320   763
+  H   356   245
+  L     4     2
+  P     0     2
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$reserved_room_type and ab_clean_hotel_df$is_canceled
+X-squared = 638.13, df = 9, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$reserved_room_type, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+   
+        0     1
+  A 40958 32905
+  B  1651   508
+  C  1910   444
+  D 18809  6357
+  E  5776  1962
+  F  2806   926
+  G  1759   780
+  H   457   251
+  I   352     5
+  K   267    12
+  L     0     1
+  P     0     2
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$assigned_room_type and ab_clean_hotel_df$is_canceled
+X-squared = 4844.5, df = 11, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$assigned_room_type, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+    
+         0     1
+  0  59575 41327
+  1  10838  1801
+  2   3025   765
+  3    781   144
+  4    308    67
+  5     98    20
+  6     45    18
+  7     28     3
+  8     13     4
+  9      7     1
+  10     5     1
+  11     2     0
+  12     2     0
+  13     5     0
+  14     4     1
+  15     3     0
+  16     1     1
+  17     2     0
+  18     1     0
+  20     1     0
+  21     1     0
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$booking_changes and ab_clean_hotel_df$is_canceled
+X-squared = 4225.4, df = 20, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$booking_changes, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+            
+                 0     1
+  No Deposit 74526 29637
+  Non Refund    93 14480
+  Refundable   126    36
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$deposit_type and ab_clean_hotel_df$is_canceled
+X-squared = 27551, df = 2, p-value < 2.2e-16
+
+     
+          0     1
+  0   73406 41794
+  1       9     3
+  2       4     1
+  3       0    59
+  4      17     8
+  5       3     5
+  6      16     0
+  7       1     3
+  8       3     4
+  9       2    14
+  10      1    27
+  11      3     4
+  12      2     1
+  13      3     1
+  14      6     3
+  15     25    29
+  16      0     4
+  17     10    37
+  18      1     2
+  19      0    30
+  20      2    27
+  21      1    36
+  22      3    53
+  23      1     2
+  24      0    19
+  25      8    17
+  26      0     4
+  27     23     3
+  28      1    49
+  30      0     2
+  31      1   126
+  32      0    19
+  33     29     1
+  34     14    12
+  35      2    94
+  36      1     0
+  37      1     0
+  38     47    29
+  39      0   227
+  40      9    19
+  41      0    63
+  42      0    30
+  43     18     1
+  44     29   112
+  45      0    65
+  46      1    93
+  47     23     1
+  48     33    19
+  49     17     1
+  50     31    49
+  52      1     0
+  53      5     1
+  54      0     1
+  55      0    10
+  56     22    23
+  57      0    25
+  58    164     0
+  59      9     5
+  60      4    37
+  61     17     1
+  62      0    60
+  63     51    32
+  64      3     0
+  65     35     0
+  68     13    29
+  69     16    73
+  70      0    18
+  71      0    13
+  72      1     0
+  73      0     1
+  74      1     0
+  75     20    20
+  76      0     2
+  77     37    26
+  79      0    20
+  80      7    17
+  81      1     0
+  83      2     0
+  84      1     1
+  85      0    15
+  87     76     4
+  89      1     0
+  91      0    50
+  92      1     0
+  93      1    39
+  96     25    21
+  97      3     0
+  98     30    29
+  99     15     4
+  100     1     2
+  101    17    48
+  105     2     0
+  107     2     3
+  108     8    12
+  109     1     0
+  111    12    59
+  113     5     1
+  116     1     0
+  117     0     1
+  120     0    25
+  121     1     1
+  122    53     2
+  125    15     1
+  142     1     0
+  147    21     9
+  150    11     0
+  154     2     0
+  160     0    25
+  162    13    17
+  165     0     1
+  167     1     0
+  174     4    15
+  175     0     1
+  176    39    11
+  178    25     5
+  183     0     1
+  185     2     0
+  187    22    23
+  193     0     1
+  207    10     5
+  215     8    13
+  223    36    25
+  224     4     6
+  236    29     6
+  259    10     0
+  330    14     1
+  379     6     9
+  391     0    45
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$days_in_waiting_list and ab_clean_hotel_df$is_canceled
+X-squared = 3167.2, df = 127, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$days_in_waiting_list, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+                 
+                      0     1
+  Contract         2814  1262
+  Group             512    58
+  Transient       52714 36460
+  Transient-Party 18705  6373
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$customer_type and ab_clean_hotel_df$is_canceled
+X-squared = 2257.7, df = 3, p-value < 2.2e-16
+
+        
+            0    1
+  -6.38     1    0
+  0      1735  203
+  0.26      1    0
+  0.5       0    1
+  1        12    3
+  1.29      1    0
+  1.48      0    1
+  1.56      2    0
+  1.6       1    0
+  1.8       1    0
+  2         9    3
+  2.4       1    0
+  3         4    0
+  3.38      1    0
+  4        16    2
+  4.5       3    0
+  5         1    0
+  5.2       1    0
+  5.25      2    0
+  6        45   22
+  6.4       1    0
+  6.5       1    0
+  6.67      1    0
+  6.9       1    0
+  7         3    0
+  7.8       0    1
+  8        24   77
+  8.34      1    0
+  8.43      1    0
+  9         9    1
+  9.14      1    0
+  9.67      1    0
+  9.71      1    0
+  10        4    2
+  10.5      1    0
+  10.8      2    0
+  11.53     1    0
+  11.75     1    0
+  12       39   51
+  12.5      1    0
+  13        2    1
+  14        5    0
+  15        6    0
+  16        0    1
+  16.92     1    0
+  17.5      0    1
+  17.6      1   10
+  18        5    0
+  18.5      2    0
+  18.6      1    0
+  19        1    3
+  19.09     1    0
+  19.15     0    4
+  19.35     2    0
+  20        4    1
+  20.88     1    0
+  21        4    1
+  21.37     2    0
+  21.5      1    0
+  22        2    0
+  22.11     0    1
+  22.4      1    0
+  22.5     13    3
+  22.86     1    0
+  23        3    1
+  23.5      1    0
+  23.6      0    1
+  23.7      3    0
+  23.93     3    0
+  24        3    0
+  24.5      1    0
+  24.7      1    0
+  24.79     0    1
+  24.8      3    0
+  24.83     1    0
+  24.87     0    1
+  24.94     1    1
+  24.95     2    0
+  25      129   21
+  25.11     3    2
+  25.42     1    0
+  25.5      1    1
+  25.64     2    1
+  25.65     2    0
+  25.92     4    0
+  26       70   10
+  26.1     50    6
+  26.23     1    0
+  26.26     1    0
+  26.33     2    0
+  26.35     0    1
+  26.5      4    0
+  26.64     5    3
+  26.93     0    1
+  26.95     1    0
+  26.99     3    0
+  27       62    4
+  27.07     2    0
+  27.35     1    0
+  27.36     1    0
+  27.43     1    0
+  27.5      7    0
+  27.53     1    0
+  27.56     1    0
+  27.6      2    0
+  27.69     1    0
+  27.81     1    0
+  27.9      6    1
+  28        5    4
+  28.1     12    0
+  28.3      1    0
+  28.33     1    0
+  28.5      4    0
+  28.64     3    0
+  28.71     1    0
+  28.79     1    0
+  28.8      2    1
+  29      189   24
+  29.01     1    0
+  29.06     1    0
+  29.11     8    1
+  29.16     7    9
+  29.34     1    0
+  29.41     1    0
+  29.6      2    0
+  29.72     1    0
+  29.73     2    0
+  29.75     1    0
+  29.78     1    0
+  29.8      2    0
+  29.96     1    0
+  29.97     1    0
+  30      252   84
+  30.03     1    0
+  30.24    31    2
+  30.3      1    0
+  30.4      1    0
+  30.43     2    0
+  30.5      9    0
+  30.6     24    1
+  30.67     1    0
+  30.71     1    0
+  30.8      4    0
+  30.86     0    1
+  30.9      1    0
+  30.96     2    0
+  30.99     1    0
+  31       33    1
+  31.05     2    0
+  31.12     0    1
+  31.16     1    0
+  31.18     0    2
+  31.2      5    0
+  31.21     1    0
+  31.4      1    0
+  31.41     1    0
+  31.45    16    1
+  31.5      2    0
+  31.59     0    1
+  31.6      1    0
+  31.63     2    0
+  31.64     2    0
+  31.65     1    0
+  31.67     1    0
+  31.71     1    0
+  31.8      1    0
+  31.88     2    2
+  31.95     1    0
+  32       72    6
+  32.01     0    1
+  32.02     1    0
+  32.1      1    0
+  32.22     0    1
+  32.23     0    1
+  32.24     2    0
+  32.3      2    1
+  32.31     1    0
+  32.34     1    0
+  32.4     13   22
+  32.5      7    0
+  32.6      2    0
+  32.62     0    2
+  32.71     2    0
+  32.77     1    0
+  32.8      3    0
+  32.83     1    0
+  32.85     1    0
+  32.95     1    0
+  33       16    0
+  33.05     1    0
+  33.08     0    1
+  33.11     3    0
+  33.15     1    0
+  33.26    10    3
+  33.27     1    0
+  33.3     25   42
+  33.31     0    1
+  33.35     1    0
+  33.45     1    0
+  33.58     0    1
+  33.6      4    5
+  33.65     1    0
+  33.68     1    0
+  33.71     1    0
+  33.84     1    0
+  33.88     1    0
+  33.94     1    0
+  34      112   68
+  34.02     2    1
+  34.11     1    1
+  34.19     1    0
+  34.2     12    5
+  34.24     1    0
+  34.3      1    0
+  34.33     1    0
+  34.4     41    1
+  34.43     0    2
+  34.44     1    0
+  34.5      2    0
+  34.51     0    1
+  34.56    12    0
+  34.57     1    0
+  34.63     1    0
+  34.65     3    1
+  34.73     3    0
+  34.79     1    0
+  34.8      0    1
+  34.82     1    0
+  34.85     1    1
+  34.86     2    0
+  34.97     0    1
+  35      327   58
+  35.05     1    0
+  35.1     23    6
+  35.11    26    0
+  35.12     3    1
+  35.14     0    1
+  35.15     4    0
+  35.16     2    0
+  35.2      0    3
+  35.24     2    0
+  35.25     1    0
+  35.27     1    0
+  35.28     1    0
+  35.33     2    0
+  35.34     2    1
+  35.4      1    0
+  35.45     1    0
+  35.46     1    0
+  35.47     1    0
+  35.5      1    0
+  35.6      2    0
+  35.63     1    0
+  35.64     0    1
+  35.65     1    0
+  35.7      2    0
+  35.71     1    0
+  35.72     1    0
+  35.81     1    0
+  35.95     1    0
+  35.99     1    0
+  36      206   86
+  36.04     6    1
+  36.05     0   32
+  36.1      4    0
+  36.12     4    0
+  36.13     4    0
+  36.14     1    0
+  36.2      4    0
+  36.22     1    0
+  36.24     2    0
+  36.25    10    2
+  36.26     0    2
+  36.29     1    0
+  36.32     1    0
+  36.38     1    0
+  36.4      4    0
+  36.43     0    1
+  36.45     6    6
+  36.5      1    4
+  36.53     1    0
+  36.55     2    0
+  36.6      2    0
+  36.61     2    0
+  36.64     1    0
+  36.72     1    0
+  36.74     1    0
+  36.75     1    0
+  36.8      1    0
+  36.84     0    1
+  36.86     5    0
+  36.9      2    0
+  36.93     1    0
+  36.96    24    2
+  37      109   37
+  37.01     1    0
+  37.05     1    0
+  37.07     1    0
+  37.1      1    0
+  37.14     1    0
+  37.15     1    0
+  37.2      0    3
+  37.25     1    0
+  37.29     1    1
+  37.3      1    0
+  37.31     2    0
+  37.33     3    2
+  37.37     1    0
+  37.4     24    1
+  37.43     4    0
+  37.44     3    1
+  37.45     1    0
+  37.5      5    1
+  37.53     1    0
+  37.54     0    3
+  37.56     4    0
+  37.6      6    0
+  37.67     3    0
+  37.7      6    2
+  37.71     1    0
+  37.73     2    0
+  37.8    119  126
+  37.83     2    1
+  37.86     1    0
+  37.94     1    0
+  37.95     0    1
+  38      191   32
+  38.03     0    1
+  38.04     4    0
+  38.07     3    1
+  38.1      1    0
+  38.11     2    0
+  38.12     1    0
+  38.13     2    0
+  38.22     1    0
+  38.25     3    0
+  38.29     1    0
+  38.32     1    1
+  38.33     3    0
+  38.4     33    3
+  38.46     1    0
+  38.47     1    0
+  38.5     17    0
+  38.55     2    0
+  38.57     1    0
+  38.62     1    0
+  38.67    16    2
+  38.68     1    0
+  38.7      6    1
+  38.77     1    0
+  38.81     6    1
+  38.83     3    0
+  38.86     1    1
+  38.88     2    1
+  38.92     1    0
+  38.93     1    0
+  38.96     1    0
+  39      212   64
+  39.04     1    0
+  39.06     0    1
+  39.1      3    2
+  39.13     2    0
+  39.14     1    0
+  39.15     7    0
+  39.2      1    0
+  39.21     1    0
+  39.24     1    0
+  39.26     1    0
+  39.27     1    0
+  39.3      5    0
+  39.33     4    5
+  39.38     0    1
+  39.4     10    0
+  39.41     1    0
+  39.42     0    1
+  39.44     2    0
+  39.5      5    0
+  39.51     2    0
+  39.6     18    4
+  39.67     1    0
+  39.68     2    0
+  39.69     0    1
+  39.7      1    0
+  39.74     1    0
+  39.76     1    0
+  39.79     1    0
+  39.8     11    0
+  39.83     2    0
+  39.84     1    0
+  39.9      0    3
+  39.91     2    0
+  39.93     1    0
+  39.95     5    0
+  39.96     0    1
+  39.99     1    0
+  40      322   77
+  40.03     1    0
+  40.05     2   50
+  40.07     2    0
+  40.1      1    0
+  40.11     1    2
+  40.14     2    1
+  40.19     2    0
+  40.23     1    0
+  40.24     1    0
+  40.25     1    0
+  40.29     0    1
+  40.31     1    0
+  40.32     6    1
+  40.39     1    0
+  40.4      3    0
+  40.5     34   17
+  40.54     1    0
+  40.65     2    0
+  40.66     0    1
+  40.67    14    0
+  40.68     3    0
+  40.7      2    0
+  40.75     1    0
+  40.76     2    0
+  40.79     1    0
+  40.8      5    3
+  40.81     1    2
+  40.83     1    0
+  40.85     5    0
+  40.93     0    1
+  40.94     1    0
+  40.95    34    4
+  40.96     2    0
+  41       24    5
+  41.04     2    0
+  41.09     1    0
+  41.1      1    0
+  41.11     3    0
+  41.18     1    1
+  41.2      1    0
+  41.25     1    0
+  41.27     0    1
+  41.29     1    1
+  41.3      1    0
+  41.33     5    0
+  41.35     1    0
+  41.37     1    0
+  41.4     59   18
+  41.43     7    0
+  41.45     1    0
+  41.46     1    0
+  41.47     1    0
+  41.48     1    0
+  41.5      1    0
+  41.51     1    0
+  41.52     1    0
+  41.53     2    0
+  41.57     5    0
+  41.58     8    1
+  41.6     15    0
+  41.62     1    0
+  41.65     2    0
+  41.71     1    0
+  41.75     2    0
+  41.76     5    1
+  41.84     2    0
+  41.85     1    2
+  41.87     1    0
+  41.88     1    0
+  41.89     3    0
+  41.93     1    0
+  41.94     1    0
+  41.96     1    0
+  41.97     1    0
+  41.98    11    0
+  42      254   78
+  42.04     1    0
+  42.05     1    0
+  42.1      0    1
+  42.11     3    0
+  42.12     2    0
+  42.14     1    0
+  42.17     1    0
+  42.19     3    0
+  42.23     2    0
+  42.24     1    0
+  42.25     1    0
+  42.28     5    0
+  42.29     0    1
+  42.3     12    5
+  42.35     2    0
+  42.36     1    0
+  42.38     1    0
+  42.4      2    0
+  42.43     8    2
+  42.45     1    0
+  42.5     32    1
+  42.51     1    0
+  42.55     1    0
+  42.56     0    2
+  42.57     2    0
+  42.6      3    0
+  42.65     3    0
+  42.66     1    0
+ [ reached getOption("max.print") -- omitted 8370 rows ]
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$adr and ab_clean_hotel_df$is_canceled
+X-squared = 24324, df = 8869, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$adr, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+   
+        0     1
+  0 67435 44153
+  1  7277     0
+  2    28     0
+  3     3     0
+  8     2     0
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$required_car_parking_spaces and ab_clean_hotel_df$is_canceled
+X-squared = 4601, df = 4, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$required_car_parking_spaces, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
+   
+        0     1
+  0 36490 33501
+  1 25809  7312
+  2 10063  2859
+  3  2043   444
+  4   303    36
+  5    37     1
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$total_of_special_requests and ab_clean_hotel_df$is_canceled
+X-squared = 8433.4, df = 5, p-value < 2.2e-16
+
+           
+                0     1
+  Canceled      0 42950
+  Check-Out 74745     0
+  No-Show       0  1203
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$reservation_status and ab_clean_hotel_df$is_canceled
+X-squared = 118898, df = 2, p-value < 2.2e-16
+
+            
+                0    1
+  2014-10-17    0  180
+  2014-11-18    0    1
+  2015-01-01    0  763
+  2015-01-02    0   16
+  2015-01-18    0    1
+  2015-01-20    0    2
+  2015-01-21    0   91
+  2015-01-22    0    6
+  2015-01-28    0    1
+  2015-01-29    0    1
+  2015-01-30    0   67
+  2015-02-02    0    2
+  2015-02-05    0    4
+  2015-02-06    0    1
+  2015-02-09    0    1
+  2015-02-10    0    2
+  2015-02-11    0    3
+  2015-02-12    0    1
+  2015-02-17    0    2
+  2015-02-19    0    1
+  2015-02-20    0   20
+  2015-02-23    0    2
+  2015-02-24    0    1
+  2015-02-25    0    2
+  2015-02-26    0    1
+  2015-02-27    0    1
+  2015-03-03    0   38
+  2015-03-04    0    2
+  2015-03-05    0    1
+  2015-03-06    0    2
+  2015-03-09    0    4
+  2015-03-10    0    1
+  2015-03-11    0    1
+  2015-03-12    0    1
+  2015-03-13    0    1
+  2015-03-17    0    4
+  2015-03-18    0    1
+  2015-03-23    0    2
+  2015-03-24    0    3
+  2015-03-25    0   17
+  2015-03-28    0    1
+  2015-03-29    0    1
+  2015-03-30    0    1
+  2015-03-31    0    4
+  2015-04-02    0   18
+  2015-04-03    0    2
+  2015-04-04    0    8
+  2015-04-05    0    6
+  2015-04-06    0    4
+  2015-04-07    0    1
+  2015-04-08    0    3
+  2015-04-10    0    5
+  2015-04-11    0    3
+  2015-04-13    0    2
+  2015-04-14    0    3
+  2015-04-15    0    9
+  2015-04-16    0    7
+  2015-04-17    0    2
+  2015-04-18    0    2
+  2015-04-20    0    6
+  2015-04-21    0    1
+  2015-04-22    0    7
+  2015-04-23    0    3
+  2015-04-24    0    4
+  2015-04-25    0    1
+  2015-04-27    0    1
+  2015-04-28    0   25
+  2015-04-29    0   27
+  2015-04-30    0    1
+  2015-05-01    0    9
+  2015-05-04    0    3
+  2015-05-05    0    4
+  2015-05-06    0    6
+  2015-05-07    0    6
+  2015-05-08    0    3
+  2015-05-09    0    4
+  2015-05-11    0    5
+  2015-05-12    0   11
+  2015-05-13    0   13
+  2015-05-14    0   50
+  2015-05-15    0    1
+  2015-05-16    0    3
+  2015-05-18    0   12
+  2015-05-19    0   33
+  2015-05-20    0    8
+  2015-05-21    0    3
+  2015-05-22    0   10
+  2015-05-23    0    8
+  2015-05-25    0    6
+  2015-05-26    0    2
+  2015-05-27    0   10
+  2015-05-28    0   28
+  2015-05-29    0   34
+  2015-05-30    0    3
+  2015-06-01    0   13
+  2015-06-02    0   10
+  2015-06-03    0    9
+  2015-06-04    0    6
+  2015-06-05    0    7
+  2015-06-06    0    3
+  2015-06-08    0   10
+  2015-06-09    0   35
+  2015-06-10    0    4
+  2015-06-11    0   13
+  2015-06-12    0   10
+  2015-06-13    0    4
+  2015-06-14    0    1
+  2015-06-15    0   53
+  2015-06-16    0   44
+  2015-06-17    0   91
+  2015-06-18    0    7
+  2015-06-19    0   14
+  2015-06-20    0    8
+  2015-06-22    0   16
+  2015-06-23    0   22
+  2015-06-24    0    6
+  2015-06-25    0   15
+  2015-06-26    0   67
+  2015-06-27    0   29
+  2015-06-29    0   96
+  2015-06-30    0   64
+  2015-07-01    3   12
+  2015-07-02    5  462
+  2015-07-03   73   80
+  2015-07-04    9    7
+  2015-07-05   33    0
+  2015-07-06   22  783
+  2015-07-07   17   38
+  2015-07-08   25   70
+  2015-07-09   18   63
+  2015-07-10   54   44
+  2015-07-11   32    9
+  2015-07-12   40    4
+  2015-07-13   34   17
+  2015-07-14   52   17
+  2015-07-15   26   14
+  2015-07-16   44   36
+  2015-07-17   79   32
+  2015-07-18   31   24
+  2015-07-19   97    0
+  2015-07-20   65   21
+  2015-07-21   32   23
+  2015-07-22   33   99
+  2015-07-23   29  179
+  2015-07-24  107    6
+  2015-07-25   36   52
+  2015-07-26   77    0
+  2015-07-27   33   18
+  2015-07-28   40   17
+  2015-07-29   61   38
+  2015-07-30   51   55
+  2015-07-31   51   71
+  2015-08-01   46   60
+  2015-08-02   50    0
+  2015-08-03   46    9
+  2015-08-04   48   57
+  2015-08-05   27   19
+  2015-08-06   38   59
+  2015-08-07   79   12
+  2015-08-08   88    8
+  2015-08-09   97    2
+  2015-08-10   68   62
+  2015-08-11   75   80
+  2015-08-12  119   31
+  2015-08-13   68   36
+  2015-08-14   93   72
+  2015-08-15   68    6
+  2015-08-16  151    0
+  2015-08-17   56   83
+  2015-08-18   59   41
+  2015-08-19  103   16
+  2015-08-20   61   23
+  2015-08-21   73  129
+  2015-08-22   68   26
+  2015-08-23   73    1
+  2015-08-24   59   24
+  2015-08-25   62   31
+  2015-08-26   73   17
+  2015-08-27   57   11
+  2015-08-28   89   26
+  2015-08-29   91    5
+  2015-08-30   85    0
+  2015-08-31   43   73
+  2015-09-01   67   36
+  2015-09-02   41   38
+  2015-09-03   88   20
+  2015-09-04   73   51
+  2015-09-05  103   18
+  2015-09-06  110    2
+  2015-09-07   96   40
+  2015-09-08  115   27
+  2015-09-09  107  183
+  2015-09-10   70   24
+  2015-09-11  133   39
+  2015-09-12   91   11
+  2015-09-13  126    1
+  2015-09-14   61   48
+  2015-09-15   56   64
+  2015-09-16  114   26
+  2015-09-17  120   63
+  2015-09-18  136   17
+  2015-09-19  118    3
+  2015-09-20  135    2
+  2015-09-21  106   29
+  2015-09-22   79   45
+  2015-09-23  127    9
+  2015-09-24  106   60
+  2015-09-25  141    8
+  2015-09-26  102    7
+  2015-09-27   45    3
+  2015-09-28   64   82
+  2015-09-29   94   17
+  2015-09-30  148   40
+  2015-10-01  110   21
+  2015-10-02   62   44
+  2015-10-03   75    7
+  2015-10-04  156    4
+  2015-10-05   90   28
+  2015-10-06   98   12
+  2015-10-07   92   67
+  2015-10-08   83   35
+  2015-10-09  165   21
+  2015-10-10   98   52
+  2015-10-11  133    0
+  2015-10-12  172   69
+  2015-10-13  133   44
+  2015-10-14   87   40
+  2015-10-15   83   31
+  2015-10-16  109   78
+  2015-10-17   60   13
+  2015-10-18  158    2
+  2015-10-19  157  105
+  2015-10-20   69   39
+  2015-10-21   88 1373
+  2015-10-22  136   66
+  2015-10-23  108   81
+  2015-10-24   99    6
+  2015-10-25   82    0
+  2015-10-26   73   40
+  2015-10-27   56   72
+  2015-10-28  157   40
+  2015-10-29   57   26
+  2015-10-30   79   15
+  2015-10-31  157    5
+  2015-11-01   99    6
+  2015-11-02   75   19
+  2015-11-03   26   45
+  2015-11-04   40   48
+  2015-11-05   44   16
+  2015-11-06   53   59
+  2015-11-07   67    6
+  2015-11-08   53    0
+  2015-11-09   72   56
+  2015-11-10   29   15
+  2015-11-11   29  127
+  2015-11-12   35   22
+  2015-11-13   35   15
+  2015-11-14   46   34
+  2015-11-15  148    0
+  2015-11-16   48  102
+  2015-11-17   54  202
+  2015-11-18   47   17
+  2015-11-19   50   46
+  2015-11-20   42   29
+  2015-11-21  106   10
+  2015-11-22  202    1
+  2015-11-23   39   72
+  2015-11-24   66   47
+  2015-11-25   42    9
+  2015-11-26  107   23
+  2015-11-27   99    9
+  2015-11-28   41    9
+  2015-11-29   97    0
+  2015-11-30   74   46
+  2015-12-01   27   26
+  2015-12-02   30  111
+  2015-12-03   49   48
+  2015-12-04   75   15
+  2015-12-05   25    6
+  2015-12-06   39    1
+  2015-12-07   78   17
+  2015-12-08  243   11
+  2015-12-09   46   78
+  2015-12-10   52   70
+  2015-12-11   43   46
+  2015-12-12   64   12
+  2015-12-13   68    9
+  2015-12-14   25   75
+  2015-12-15   26   42
+  2015-12-16   28   15
+  2015-12-17   37   52
+  2015-12-18   27  393
+  2015-12-19   50   12
+  2015-12-20   45   10
+  2015-12-21   23   13
+  2015-12-22   34   78
+  2015-12-23   40   67
+  2015-12-24   21    3
+  2015-12-25   24   28
+  2015-12-26   38   26
+  2015-12-27   64   11
+  2015-12-28   57   20
+  2015-12-29   92   80
+  2015-12-30   95   35
+  2015-12-31   56   12
+  2016-01-01   88   10
+  2016-01-02  138    7
+  2016-01-03  172   21
+  2016-01-04   48   32
+  2016-01-05  110   95
+  2016-01-06   42  189
+  2016-01-07   48   58
+  2016-01-08   73  104
+  2016-01-09   29   30
+  2016-01-10   50   21
+  2016-01-11   42   84
+  2016-01-12   34   32
+  2016-01-13   55   33
+  2016-01-14   35   66
+  2016-01-15   53   34
+  2016-01-16   39  137
+  2016-01-17  101   17
+  2016-01-18   32  593
+  2016-01-19   30  202
+  2016-01-20   48   67
+  2016-01-21   92   74
+  2016-01-22   74  140
+  2016-01-23   42   24
+  2016-01-24   91   27
+  2016-01-25   33   59
+  2016-01-26   38  107
+  2016-01-27   75   25
+  2016-01-28   52  121
+  2016-01-29   74   47
+  2016-01-30   39   24
+  2016-01-31   75   17
+  2016-02-01   36  222
+  2016-02-02   37   48
+  2016-02-03   46   91
+  2016-02-04   54   62
+  2016-02-05   59   70
+  2016-02-06   41   23
+  2016-02-07  113   20
+  2016-02-08   64   46
+  2016-02-09  115  294
+  2016-02-10  122  106
+  2016-02-11   74   34
+  2016-02-12   62   69
+  2016-02-13   64   49
+  2016-02-14  207   50
+  2016-02-15  103   46
+  2016-02-16   50   54
+  2016-02-17   76   51
+  2016-02-18   74   42
+  2016-02-19   81   37
+  2016-02-20  136   46
+  2016-02-21  120   18
+  2016-02-22   50   82
+  2016-02-23   46  114
+  2016-02-24   63   57
+  2016-02-25   89  120
+  2016-02-26   87   46
+  2016-02-27   78  111
+  2016-02-28  113   76
+  2016-02-29  142   76
+  2016-03-01   29  112
+  2016-03-02   95   73
+  2016-03-03  122   45
+  2016-03-04  102   99
+  2016-03-05   61   39
+  2016-03-06  152   28
+  2016-03-07   66   63
+  2016-03-08   75   50
+  2016-03-09   96   90
+  2016-03-10   80   37
+  2016-03-11   98   45
+  2016-03-12  120   36
+  2016-03-13  152   25
+  2016-03-14   91  170
+  2016-03-15   67  260
+  2016-03-16   97   82
+  2016-03-17  112   29
+  2016-03-18  123  128
+  2016-03-19   86   27
+  2016-03-20  128   38
+  2016-03-21   98   82
+  2016-03-22  112   59
+  2016-03-23  113   62
+  2016-03-24  132   46
+  2016-03-25   97   38
+  2016-03-26   85   26
+  2016-03-27  177   29
+  2016-03-28  136   77
+  2016-03-29   74  113
+  2016-03-30   80   50
+  2016-03-31  106   66
+  2016-04-01   78   44
+  2016-04-02   81   31
+  2016-04-03  136   37
+  2016-04-04  125  257
+  2016-04-05   68   34
+  2016-04-06  139   50
+  2016-04-07  136   33
+  2016-04-08  117   44
+  2016-04-09  112   45
+  2016-04-10  115   36
+  2016-04-11  101   88
+  2016-04-12   85   63
+  2016-04-13   74   96
+  2016-04-14  129   35
+  2016-04-15  124   76
+  2016-04-16   97   34
+  2016-04-17  146  153
+  2016-04-18  110   57
+  2016-04-19   73   57
+  2016-04-20  144   36
+  2016-04-21  105   43
+  2016-04-22  120   39
+  2016-04-23   82   45
+  2016-04-24  118   34
+  2016-04-25  141   43
+  2016-04-26  113   38
+  2016-04-27   89  193
+  2016-04-28  115   55
+  2016-04-29  134   37
+  2016-04-30  114   32
+  2016-05-01  103   22
+  2016-05-02  140   58
+  2016-05-03   84   96
+  2016-05-04  115   87
+  2016-05-05  115  109
+  2016-05-06  104   88
+  2016-05-07   92   13
+  2016-05-08  173   21
+  2016-05-09   91   61
+  2016-05-10   96   78
+  2016-05-11   85   45
+  2016-05-12  139   31
+  2016-05-13   98   39
+  2016-05-14  100   29
+  2016-05-15  149   19
+  2016-05-16  155   45
+  2016-05-17  129   43
+  2016-05-18  103   55
+  2016-05-19  150   37
+  2016-05-20  133   33
+  2016-05-21  105   19
+  2016-05-22  124   31
+  2016-05-23  111   62
+  2016-05-24   94   50
+  2016-05-25  108   50
+  2016-05-26  171   21
+  2016-05-27   50   58
+  2016-05-28   47   20
+  2016-05-29  225   20
+  2016-05-30  123   48
+  2016-05-31   71   42
+  2016-06-01   77   17
+  2016-06-02  110  146
+  2016-06-03  123   28
+  2016-06-04  101   14
+  2016-06-05  123   36
+  2016-06-06  126   38
+  2016-06-07   68   59
+  2016-06-08  121   34
+  2016-06-09  123   42
+  2016-06-10   92   33
+  2016-06-11   74   15
+  2016-06-12  150   31
+  2016-06-13  122   55
+  2016-06-14   68   68
+  2016-06-15   97   58
+  2016-06-16   67   52
+  2016-06-17  156   46
+  2016-06-18   75   13
+  2016-06-19  100   41
+  2016-06-20  124  154
+  2016-06-21   93   57
+  2016-06-22  108   40
+  2016-06-23  119   21
+  2016-06-24  143   37
+  2016-06-25   46   18
+  2016-06-26  228   43
+  2016-06-27   79   40
+  2016-06-28   75   70
+  2016-06-29   75   38
+  2016-06-30   93   38
+  2016-07-01   91   33
+  2016-07-02  104   22
+  2016-07-03   98   27
+  2016-07-04   78   47
+  2016-07-05   83   44
+  2016-07-06   89   36
+  2016-07-07   91   60
+  2016-07-08   91   47
+  2016-07-09   99   30
+  2016-07-10   89   23
+  2016-07-11  103   36
+  2016-07-12   93   43
+  2016-07-13   83  147
+ [ reached getOption("max.print") -- omitted 426 rows ]
+
+	Pearson's Chi-squared test
+
+data:  ab_clean_hotel_df$reservation_status_date and ab_clean_hotel_df$is_canceled
+X-squared = 28436, df = 925, p-value < 2.2e-16
+
+Warning message:
+In chisq.test(ab_clean_hotel_df$reservation_status_date, ab_clean_hotel_df$is_canceled,  :
+  Chi-squared approximation may be incorrect
