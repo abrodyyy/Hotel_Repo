@@ -12,61 +12,71 @@ View(ab_clean_hotel_df)
 # Null Hypothesis: Cancelation rate IS NOT correlated to hotel type
 # Alternate Hypothesis: Cancelation rate IS correlated to hotel type
 table(ab_clean_hotel_df$hotel, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$hotel, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$hotel, ab_clean_hotel_df$is_canceled, correct=TRUE)
+# P-Value is zero, therefore we reject the null hypothesis
 
 # lead_time
 # Null Hypothesis: Cancelation rate IS NOT correlated to lead_time
 # Alternate Hypothesis: Cancelation rate IS correlated to lead_time
-table(ab_clean_hotel_df$lead_time, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$lead_time, ab_clean_hotel_df$is_canceled, correct=FALSE)
+t.test(ab_clean_hotel_df$lead_time~ab_clean_hotel_df$is_canceled,var.equal=TRUE)
+# P-Value is zero, therefore we reject the null hypothesis
+
+# Null Hypothesis: Hotel type rate IS NOT correlated to lead_time
+# Alternate Hypothesis: Hotel type rate IS correlated to lead_time
+t.test(ab_clean_hotel_df$lead_time~ab_clean_hotel_df$hotel,var.equal=TRUE)
+# P-Value is zero, therefore we reject the null hypothesis
 
 # arrival_date_year
 # Null Hypothesis: Cancelation rate IS NOT correlated to arrival_date_year
 # Alternate Hypothesis: Cancelation rate IS correlated to arrival_date_year
 table(ab_clean_hotel_df$arrival_date_year, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$arrival_date_year, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$arrival_date_year, ab_clean_hotel_df$is_canceled, correct=TRUE)
+# P-Value is zero, therefore we reject the null hypothesis
 
 # arrival_date_month
 # Null Hypothesis: Cancelation rate IS NOT correlated to arrival_date_month
 # Alternate Hypothesis: Cancelation rate IS correlated to arrival_date_month
 table(ab_clean_hotel_df$arrival_date_month, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$arrival_date_month, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$arrival_date_month, ab_clean_hotel_df$is_canceled, correct=TRUE)
+# P-Value is zero, therefore we reject the null hypothesis
 
 # arrival_date_week_number
 # Null Hypothesis: Cancelation rate IS NOT correlated to arrival_date_week_number
 # Alternate Hypothesis: Cancelation rate IS correlated to arrival_date_week_number
 table(ab_clean_hotel_df$arrival_date_week_number, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$arrival_date_week_number, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$arrival_date_week_number, ab_clean_hotel_df$is_canceled, correct=TRUE)
+# P-Value is zero, therefore we reject the null hypothesis
 
 # arrival_date_day_of_month
 # Null Hypothesis: Cancelation rate IS NOT correlated to arrival_date_day_of_month
 # Alternate Hypothesis: Cancelation rate IS correlated to arrival_date_day_of_month
 table(ab_clean_hotel_df$arrival_date_day_of_month, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$arrival_date_day_of_month, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$arrival_date_day_of_month, ab_clean_hotel_df$is_canceled, correct=TRUE)
+# P-Value is zero, therefore we reject the null hypothesis
 
 # stays_in_weekend_nights
 # Null Hypothesis: Cancelation rate IS NOT correlated to stays_in_weekend_nights
 # Alternate Hypothesis: Cancelation rate IS correlated to stays_in_weekend_nights
 table(ab_clean_hotel_df$stays_in_weekend_nights, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$stays_in_weekend_nights, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$stays_in_weekend_nights, ab_clean_hotel_df$is_canceled, correct=TRUE)
 
 # stays_in_week_nights
 # Null Hypothesis: Cancelation rate IS NOT correlated to stays_in_week_nights
 # Alternate Hypothesis: Cancelation rate IS correlated to stays_in_week_nights
 table(ab_clean_hotel_df$stays_in_week_nights, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$stays_in_week_nights, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$stays_in_week_nights, ab_clean_hotel_df$is_canceled, correct=TRUE)
 
 # adults - no. of adults on reservation
 # Null Hypothesis: Cancelation rate IS NOT correlated to adults
 # Alternate Hypothesis: Cancelation rate IS correlated to adults
 table(ab_clean_hotel_df$adults, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$adults, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$adults, ab_clean_hotel_df$is_canceled, correct=TRUE)
 
 # children - no. of children on reservation
 # Null Hypothesis: Cancelation rate IS NOT correlated to children
 # Alternate Hypothesis: Cancelation rate IS correlated to children
 table(ab_clean_hotel_df$children, ab_clean_hotel_df$is_canceled)
-chisq.test(ab_clean_hotel_df$children, ab_clean_hotel_df$is_canceled, correct=FALSE)
+chisq.test(ab_clean_hotel_df$children, ab_clean_hotel_df$is_canceled, correct=FALTRUESE)
 
 # babies - no. of babies on reservation
 # Null Hypothesis: Cancelation rate IS NOT correlated to babies
@@ -157,6 +167,7 @@ chisq.test(ab_clean_hotel_df$customer_type, ab_clean_hotel_df$is_canceled, corre
 # Alternate Hypothesis: Cancelation rate IS correlated to adr
 table(ab_clean_hotel_df$adr, ab_clean_hotel_df$is_canceled)
 chisq.test(ab_clean_hotel_df$adr, ab_clean_hotel_df$is_canceled, correct=FALSE)
+t.test(ab_clean_hotel_df$adr~ab_clean_hotel_df$is_canceled,var.equal=TRUE)
 
 # required_car_parking_spaces
 # Null Hypothesis: Cancelation rate IS NOT correlated to required_car_parking_spaces
