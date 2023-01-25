@@ -1,6 +1,6 @@
 # Final Project: Hotel Cancellation Forecast 
 
-### Current Status of Project: Segment 1 in progress
+### Current Status of Project: Segment 2 in progress
 
 **Segment 1:**
 - Create a detailed Readme report on current status of project, links to data, slide deck, other important references
