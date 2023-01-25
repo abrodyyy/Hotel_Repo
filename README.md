@@ -63,7 +63,15 @@
 - Original Dataset: [Hotel Bookings Dataset](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand) sourced from article [Hotel Booking Demand Datasets](https://www.sciencedirect.com/science/article/pii/S2352340918315191)
 - Technologies: Google Colab, PgAdmin, Tableau
 - Languages: Python, SQL
-- Algorithms: 
+- Algorithms:
+  - Machine Learning Model: Binary Logistic Regression Model
+  - Libraries: 
+    - Pandas
+    - Scikit-learn
+    - Seaborn
+    - Tensorflow
+    - Matplotlib
+    - Numpy
 
 ## Results
 - [Final Presentation](https://docs.google.com/presentation/d/1HDH8MzOXkqZIBVwwQJ9A0n3o-WJ2LfAWJDuUSSZJil4/edit?usp=share_link)
