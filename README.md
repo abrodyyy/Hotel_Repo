@@ -98,11 +98,19 @@ We also split the dataset by hotel type. After creating different initial visual
 **Analysis Phase**
 - Bookings & Cancellations Per Month 
 
+After grouping our data to analyze the trends we could observe per month, we found that overall  the months with the highest booking amount were the months of August, closely followed by July. Additionally, we found these months contained the highest amount of cancellations per month, followed closely by June and September.
+
 ![BookingsPerMonth.png](Images/BookingsPerMonth.png)
 ![CancellationsPerMonth.png](Images/CancellationsPerMonth.png)
 
 - Average Daily Rate Per Month
 
+To support the trend shown above, we created more plots to observe how each month would perform but now with the variable of average daily rate in which we color coordinated our months based on the seasons. As we anticipated,there was a higher amount of average daily rate during the months that contained the most amount of   bookings and cancellation.The image shown below showcases  that there are a higher amount of bookings in the warmer seasons(represented by the color red) than the colder seasons(represented by the color blue).
+
+![ADRPerMonth.png](Images/ADRPerMonth.png)
+
+The observations shown above can also be supported by our continuation of analysis of the variable average daily rate per month and type of hotels. The plots shown below show a continuous trend over the same months of June, July, and August. Over the three years we studied, these months continued to be the ones containing the highest average daily rate. Unsurprisingly, these months are also the months we observed before containing a higher amount of bookings and cancellations. We can also see the connection of this trend with the types of hotels. The type of hotel that contained the higher amount of bookings and cancellations also contained the higher amount of average daily rate.
+ 
 ![ADR_Month.png](Images/ADR_Month.png)
 ![ADR_Month_HotelType.png](Images/ADR_Month_HotelType.png)
 
