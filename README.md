@@ -131,11 +131,23 @@ Lastly, we analyze the column of lead time to investigate whether there was a tr
 ### Machine Learning Model Results: 
 
 #### Binary Logistic Regression Model
+
+![BinaryLogistic_results.png](Images/BinaryLogistic_results.png)
+
 - Our targeted variable is binary, and a logistical model would be ideal for this case. In general, the logistical model is used to find what is the probability for an event to be categorized in one group or another.
 - We trained this model using the ```train_test_split``` library from ```sklearn.model_selection```. It splits the data into 80% and 20% for training and testing datasets. After splitting the preprocessed data, we used the ```StandardScaler``` to scale the X_train and X_test datasets. 
 - The accuracy of the Logistic Regression model was 80.77%.
 - The Logistic Regression model predicts binary outcomes. It analyzes the data, and determines its probability of belonging to one of the classes.
-- From the statistics of the classification report, the sensitivity for non cancellations is 94% and 59% for cancellations. The precision for accurately predicting non cancellations is 79% and 84 for cancellations. The accuracy  is 80% overall.
-- Since we had only an 80.77% accuracy score for this model, we tried the Random Forrest Classifier model. If we had more time, we would use the time to optimize our model by using a booster or changing the way we preprocessed our data. 
+- From the statistics of the classification report, the sensitivity for non cancellations is 94% and 59% for cancellations. The precision for accurately predicting non cancellations is 79% and 84% for cancellations. The accuracy  is 80% overall.
+
+
+#### Random Forrest Classifier Model
+
+![RandomForrest_Results.png](Images/RandomForrest_Results.png)
+
+- Since we had only an 80.77% accuracy score for this model, we tried the Random Forrest Classifier model. 
+- For this model, we were able to increase our accuracy score to 85.69%. 
+- Our precision for non-cancellations increased to 86% and the recall for cancellations also increased to 75%. 
+- Overall, the Random Forrest Classifier produced better results than the Binary Logistic Regression model. If we had more time, we would use the time to optimize our model by using a booster or changing the way we preprocessed our data. 
 
 ### Recommendations for Future Analysis
