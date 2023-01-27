@@ -132,7 +132,7 @@ Lastly, we analyze the column of lead time to investigate whether there was a tr
 
 #### Binary Logistic Regression Model
 
-![BinaryLogistic_results.png](Images/BinaryLogistic_results.png)
+![LogisticRegression_ResultsCropped.png](Images/LogisticRegression_ResultsCropped.png)
 
 - Our targeted variable is binary, and a logistical model would be ideal for this case. In general, the logistical model is used to find what is the probability for an event to be categorized in one group or another.
 - We trained this model using the ```train_test_split``` library from ```sklearn.model_selection```. It splits the data into 80% and 20% for training and testing datasets. After splitting the preprocessed data, we used the ```StandardScaler``` to scale the X_train and X_test datasets. 
@@ -143,7 +143,7 @@ Lastly, we analyze the column of lead time to investigate whether there was a tr
 
 #### Random Forrest Classifier Model
 
-![RandomForrest_Results.png](Images/RandomForrest_Results.png)
+![RandomForrest_ResultsCropped.png](Images/RandomForrest_ResultsCropped.png)
 
 - Since we had only an 80.77% accuracy score for this model, we tried the Random Forrest Classifier model. 
 - For this model, we were able to increase our accuracy score to 85.69%. 
