@@ -81,14 +81,40 @@
 
 ### Description of the EDA & Analysis phase 
 
+**Exploratory Data Analysis**
+
+After going through a couple of datasets, we finally found a dataset that contained almost 119,000 rows and 32 columns of data on Hotel Booking Demands. At the beginning of our Exploratory Data Analysis phase, we inspected the data and created a correlation matrix to see if there were any strong correlations with our target column “is_canceled.” We could not find any strong correlations with our columns and the target variable. Next, we used our cleaned dataset to further look into any trends our data might tell us. We first looked at how many cancellations there were per hotel type. 
+
+![BookedCityVsResort.png](Images/BookedCityVsResort.png)
+![CityVsResortCancellations.png](Images/CityVsResortCancellations.png)
+
+From the pie chart above, we saw that the majority of the bookings were for the City hotel (66.7%) vs. the Resort hotel (33.3%). We also noticed the general trend with the more bookings, there are more cancellations in both types of hotels. With a total of 118,898 Total Bookings, 44,153 were canceled. Of the total cancellations, there were: 
+- Resort Hotel Bookings Canceled: 11,077 (25.09% of Total Cancellations)
+- City Hotel Bookings Canceled: 33,076 (74.91% of Total Cancellations)
+
+After looking at the number of bookings and cancellations per hotel type, we experimented with the different features affecting our target variable.
+We also split the dataset by hotel type. After creating different initial visualizations to show the trends for different features, we gathered as a team to discuss and analyze what we thought was important to note about our data. 
+
+**Analysis Phase**
+- Bookings & Cancellations Per Month 
+
+![BookingsPerMonth.png](Images/BookingsPerMonth.png)
+![CancellationsPerMonth.png](Images/CancellationsPerMonth.png)
+
+- Average Daily Rate Per Month
+
+![ADR_Month.png](Images/ADR_Month.png)
+![ADR_Month_HotelType.png](Images/ADR_Month_HotelType.png)
+
 ### Preprocessing/ Cleaning Data
 
+
 ### Machine Learning Model Results: Binary Logistic Regression Model
-- Why did you choose this model?
-- How will you train the model?
-- What’s the accuracy of the model?
-- How does the model work?
-- If statistics are involved, which ones will the analysis include, and why?
-- What would you include or change if you had more time?
+- Our targeted variable is binary, and a logistical model would be ideal for this case. In general, the logistical model is used to find what is the probability for an event to be categorized in one group or another.
+- We trained this model using the ```train_test_split``` library from ```sklearn.model_selection```. It splits the data into 80% and 20% for training and testing datasets. After splitting the preprocessed data, we used the ```StandardScaler``` to scale the X_train and X_test datasets. 
+- The accuracy of the Logistic Regression model was 80.77%.
+- The Logistic Regression model predicts binary outcomes. It analyzes the data, and determines its probability of belonging to one of the classes.
+- From the statistics of the classification report, the sensitivity for non cancellations is 94% and 59% for cancellations. The precision for accurately predicting non cancellations is 79% and 84 for cancellations. The accuracy  is 80% overall.
+- Since we had only an 80.77% accuracy score for this model, we tried the Random Forrest Classifier model. If we had more time, we would use the time to optimize our model by using a booster or changing the way we preprocessed our data. 
 
 ### Recommendations for Future Analysis
