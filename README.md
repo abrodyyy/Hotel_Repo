@@ -122,8 +122,15 @@ Lastly, we analyze the column of lead time to investigate whether there was a tr
 
 ### Cleaning & Preprocessing Data for ML Model
 
+- After using the Pandas library to import our data csv, we explored the columns and looked for columns with null values and duplicate values. We realized the duplicated values could just be from similar reservations so we left those values. For the columns with null values, initially we dropped (columns = “agent”, “company”) since they made the most null values and didn’t have much of a significant correlation to our target column. 
+- After looking at our columns, we felt like we had too many features. We looked at what each column represented and decided to drop more columns that may not be necessary for our analysis. This left us with the final columns for preprocessing and machine learning: 'hotel', 'is_canceled', 'lead_time', 'arrival_date_month', 'stays_in_weekend_nights', 'stays_in_week_nights', 'adults', 'children', 'babies', 'meal', 'market_segment', 'is_repeated_guest', 'previous_cancellations', 'previous_bookings_not_canceled', 'deposit_type', 'days_in_waiting_list', 'customer_type', 'adr', 'required_car_parking_spaces', 'total_of_special_requests'
+- Next, in the preprocessing step, we hard-coded the month columns with respective numbers. 
+- Then we imported ```StandardScaler``` and ```OneHotEncoder``` libraries to encode the list of categorical variables, merged the one-hot encoded features and dropped the originals. Next we split the preprocessed data into features and target arrays, used ```test_train_split```, then scaled our final training and testing datasets. We were now ready to use our training and testing datasets for our Machine Learning Model(s).
 
-### Machine Learning Model Results: Binary Logistic Regression Model
+
+### Machine Learning Model Results: 
+
+#### Binary Logistic Regression Model
 - Our targeted variable is binary, and a logistical model would be ideal for this case. In general, the logistical model is used to find what is the probability for an event to be categorized in one group or another.
 - We trained this model using the ```train_test_split``` library from ```sklearn.model_selection```. It splits the data into 80% and 20% for training and testing datasets. After splitting the preprocessed data, we used the ```StandardScaler``` to scale the X_train and X_test datasets. 
 - The accuracy of the Logistic Regression model was 80.77%.
