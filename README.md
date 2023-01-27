@@ -96,14 +96,14 @@ After looking at the number of bookings and cancellations per hotel type, we exp
 We also split the dataset by hotel type. After creating different initial visualizations to show the trends for different features, we gathered as a team to discuss and analyze what we thought was important to note about our data. 
 
 **Analysis Phase**
-- Bookings & Cancellations Per Month 
+- **Bookings & Cancellations Per Month** 
 
 After grouping our data to analyze the trends we could observe per month, we found that overall  the months with the highest booking amount were the months of August, closely followed by July. Additionally, we found these months contained the highest amount of cancellations per month, followed closely by June and September.
 
 ![BookingsPerMonth.png](Images/BookingsPerMonth.png)
 ![CancellationsPerMonth.png](Images/CancellationsPerMonth.png)
 
-- Average Daily Rate Per Month
+- **Average Daily Rate Per Month**
 
 To support the trend shown above, we created more plots to observe how each month would perform but we shifted our focus to the column of average daily rate in which we color coordinated our months based on the seasons. As we anticipated,there was a higher average daily rate during the months that contained the highest amount of bookings and cancellation. The image shown below showcases the fact that there are a higher amount of bookings in the warmer seasons(represented by the color red) than the colder seasons(represented by the color blue).
 
@@ -114,13 +114,13 @@ The observations shown above can also be supported by additional analysis' of th
 ![ADR_Month.png](Images/ADR_Month.png)
 ![ADR_Month_HotelType.png](Images/ADR_Month_HotelType.png)
 
-- Lead Time vs Bookings
+- **Lead Time vs Bookings**
 
 Lastly, we analyze the column of lead time to investigate whether there was a trend in this column or not. To make our observations faster, we created a boxplot containing the boxplots of lead time versus the booking status of confirmed and cancelled. We noticed a higher mean of lead times in cancellations than confirmations, which leads us to believe that the longer a customer makes their reservation, the more likely they are to cancel their bookings. 
 
 ![LeadTime.png](Images/LeadTime.png)
 
-### Preprocessing/ Cleaning Data
+### Cleaning & Preprocessing Data for ML Model
 
 
 ### Machine Learning Model Results: Binary Logistic Regression Model
