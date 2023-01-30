@@ -2,21 +2,18 @@
 
 ### Current Status of Project: Segment 2 in progress
 
-**Segment 1:**
+**Segment 2:**
 - Create a detailed Readme report on current status of project, links to data, slide deck, other important references
-- Perform an exploratory analysis
-- Create a mock up of a machine learning model
-- Create a database with an ERD
-- At least four commits per team member 
-- Presentation Requirements: topic and reasoning, description of the data, question that the team plans to answer 
+- Machine learning model with confusion matrix and accuracy score
+- Updated database 
+- Description of the data, questions the team originally planned to answer, EDA, analysis phase and technologies
+- Draft Google Slides presentation
 
 **Challenges:**
-- We were not able to find two cohesive datasets 
+- We are continuing to try to optimize our model for a better accuracy score. Right now we have an 86% accuracy score for a Random Forrest Model
 
 **Plans for future work:**
-- Individually, continue the EDA process to find more applicable visualizations for our dataset
-- Continue Preprocessing data for Machine Learning Models (1/23)
-- Work on Machine Learning Model as a group (1/23)
+- Individually, continue to try and optimize our model for higher accuracy scores 
 
 
 ## Background and Purpose 
@@ -136,9 +133,17 @@ Lastly, we analyze the column of lead time to investigate whether there was a tr
 
 - Our targeted variable is binary, and a logistical model would be ideal for this case. In general, the logistical model is used to find what is the probability for an event to be categorized in one group or another.
 - We trained this model using the ```train_test_split``` library from ```sklearn.model_selection```. It splits the data into 80% and 20% for training and testing datasets. After splitting the preprocessed data, we used the ```StandardScaler``` to scale the X_train and X_test datasets. 
-- The accuracy of the Logistic Regression model was 80.77%.
 - The Logistic Regression model predicts binary outcomes. It analyzes the data, and determines its probability of belonging to one of the classes.
-- From the statistics of the classification report, the sensitivity for non cancellations is 94% and 59% for cancellations. The precision for accurately predicting non cancellations is 79% and 84% for cancellations. The accuracy  is 80% overall.
+- The analysis will include a description and interpretation of the values in the classification report and confusion matrix. The scores of interest in the classification report will be the accuracy, precision, recall, and F1 score for our model’s ability to predict if a booking will be canceled. The description of the confusion matrix is necessary because it provides the number of true positives, true negatives, false positives, and false negatives returned by the model which are used to generate the classification report. The accuracy score will measure the number of correct predictions made by the model in relation to the total number of predictions made. Precision will tell us the percentage of correct positive predictions relative to total positive predictions. Recall will tell us the percentage of correct positive predictions relative to the total actual positives. The F1 score will represent a weighted mean of precision and recall to give us a rounded assessment of model performance. 
+
+Interpretation of our logistic regression scores:
+
+- Accuracy (0.807771236333053): Our model correctly predicted whether a booking would be canceled 80.78% of the time. 
+- Precision (0.84): Out of all the bookings the model predicted would be canceled, only 84% actually were.
+- Recall (0.59): Out of all the bookings that were actually canceled, the model only predicted this outcome correctly for 59% of those bookings.
+- F1 Score (0.70): The value is somewhat close to 1 which means that the model does an “ok” job at predicting cancellations. However, we would ideally want a higher score given that our model’s predictions would impact decisions on the hotel’s/hospitality industry’s side that could affect business.
+
+
 
 
 #### Random Forrest Classifier Model
@@ -150,4 +155,11 @@ Lastly, we analyze the column of lead time to investigate whether there was a tr
 - Our precision for non-cancellations increased to 86% and the recall for cancellations also increased to 75%. 
 - Overall, the Random Forrest Classifier produced better results than the Binary Logistic Regression model. If we had more time, we would use the time to optimize our model by using a booster or changing the way we preprocessed our data. 
 
+
 ### Recommendations for Future Analysis
+
+- We would have done a deeper dive into other models, such as the deep learning neural network and compared  it to the accuracy, precision, and recall scores from the random forest and logistic regression models.
+- We would have split up the two types of hotels (city and resort) and done a separate analysis and then compared it back to our current analysis that contains both city and resort hotel data.
+- We created a  correlation table but we would have gone more in depth and conducted individual statistical tests that display the pvalue for each variable that would indicate the level of significance that variable has toward cancellations. 
+- We would have found another hotel dataset that predicted cancellations and would have joined it with our current postgreSQL database.
+- Furthermore, we may have used other technologies to analyze the data, such as incorporating R and one of its packages Shiny to construct an application that assists with looking at cancellation patterns. 
