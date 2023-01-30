@@ -53,7 +53,6 @@
 **Research Question(s):**
 - Can you predict if a customer is going to cancel their reservation based on their hotel booking?
 - Which factors/ features can predict customer cancellations?
-- How many bookings were canceled? 
 
 
 ## Resources
