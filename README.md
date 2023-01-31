@@ -71,9 +71,10 @@
 
 ## Results
 - [Final Presentation](https://docs.google.com/presentation/d/1HDH8MzOXkqZIBVwwQJ9A0n3o-WJ2LfAWJDuUSSZJil4/edit?usp=share_link)
-- [Exploratory Data Analysis Notebook](https://github.com/abrodyyy/Hotel_Repo/blob/main/Hotel_ExploratoryAnalysis.ipynb) / [Tableau EDA](https://public.tableau.com/app/profile/alexandra.brody/viz/Hotel_Bookings_EDA/HotelBookingsExploratoryDataAnalysis?publish=yes)
+- [Exploratory Data Analysis Notebook](https://github.com/abrodyyy/Hotel_Repo/blob/main/Hotel_ExploratoryAnalysis.ipynb)
 - [Preprocessing Data &  Machine Learning Model Notebook](https://github.com/abrodyyy/Hotel_Repo/blob/main/Hotels_Preprocessing_MLModel.ipynb)
-- Interactive Dashboard
+- [Optimizing the ML Model](https://github.com/abrodyyy/Hotel_Repo/blob/main/Optimizing_ML_Model.ipynb)
+- [Interactive Dashboard](https://public.tableau.com/app/profile/alexandra.brody/viz/Hotel_Bookings_EDA/HotelBookingsExploratoryDataAnalysis?publish=yes)
 
 ### Description of the EDA & Analysis phase 
 
@@ -153,6 +154,9 @@ Interpretation of our logistic regression scores:
 - For this model, we were able to increase our accuracy score to 85.69%. 
 - Our precision for non-cancellations increased to 86% and the recall for cancellations also increased to 75%. 
 - Overall, the Random Forrest Classifier produced better results than the Binary Logistic Regression model. If we had more time, we would use the time to optimize our model by using a booster or changing the way we preprocessed our data. 
+
+
+#### Optimizing the Model 
 
 
 ### Recommendations for Future Analysis
