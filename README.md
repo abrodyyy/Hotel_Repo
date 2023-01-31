@@ -161,8 +161,9 @@ Interpretation of our logistic regression scores:
 
 ### Recommendations for Future Analysis
 
-- We would have done a deeper dive into other models, such as the deep learning neural network and compared  it to the accuracy, precision, and recall scores from the random forest and logistic regression models.
-- We would have split up the two types of hotels (city and resort) and done a separate analysis and then compared it back to our current analysis that contains both city and resort hotel data.
-- We created a  correlation table but we would have gone more in depth and conducted individual statistical tests that display the pvalue for each variable that would indicate the level of significance that variable has toward cancellations. 
-- We would have found another hotel dataset that predicted cancellations and would have joined it with our current postgreSQL database.
-- Furthermore, we may have used other technologies to analyze the data, such as incorporating R and one of its packages Shiny to construct an application that assists with looking at cancellation patterns. 
+- In the current dataset, both hotels were located in Portugal. One recommendation is to collect data from hotels in other countries and regions to determine if  the location of the hotel significantly impacts any of the variables/features used in the current research. Doing a more in depth statistical analysis for each individual variable to determine the significance before dropping columns/ variables. 
+- The team would have tested other machine learning classification algorithms, such as K-nearest neighbors and Naive Bayes classifier. Then compared their results to the accuracy, precision, and recall scores received from the random forest and logistic regression models to determine the best model for the dataset.
+- We could have used boosters to also improve our accuracy scores for our models 
+- The team may have divided the dataset between the two types of hotels (city vs. resort) and done an analysis on each type. This would have allowed the team to thoroughly investigate whether any of the variables/features have a higher level of significance with the type of hotel. 
+- The team constructed a correlation table to investigate the strength of association between variables and the direction of their relationship. However, in addition the team would have conducted individual t-tests that display the pvalue for each variable. This would indicate the level of significance the variables have with hotel cancellations (IsCanceled variable). 
+- Furthermore, we may have used other technologies to analyze the data and create data visualizations, such as incorporating R and one of its packages Shiny. The team would have used Shiny to construct an interactive web application that assists with looking at cancellation patterns with interactive visualizations. 
