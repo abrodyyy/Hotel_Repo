@@ -1,6 +1,6 @@
 # Final Project: Hotel Cancellation Forecast 
 
-### Current Status of Project: Segment 2 in progress
+### Current Status of Project: Segment 2 finished
 
 **Segment 2:**
 - Create a detailed Readme report on current status of project, links to data, slide deck, other important references
@@ -10,10 +10,12 @@
 - Draft Google Slides presentation
 
 **Challenges:**
-- We are continuing to try to optimize our model for a better accuracy score. Right now we have an 86% accuracy score for a Random Forrest Model
+- We are continuing to try to optimize our model for a better accuracy score. Right now we have an 88% accuracy score for a Random Forrest Model
 
 **Plans for future work:**
 - Individually, continue to try and optimize our model for higher accuracy scores 
+- Work on the Google Slides Presentation
+- Work on finalizing our Tableau
 
 
 ## Background and Purpose 
