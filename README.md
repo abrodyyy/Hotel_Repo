@@ -156,7 +156,13 @@ Interpretation of our logistic regression scores:
 - Overall, the Random Forrest Classifier produced better results than the Binary Logistic Regression model. If we had more time, we would use the time to optimize our model by using a booster or changing the way we preprocessed our data. 
 
 
-#### Optimizing the Model 
+#### Optimizing the Model & Feature Importances
+- 
+
+![OptimizingModel.png](Images/OptimizingModel.png)
+
+**Feature Importances (Top 10):**
+![FeatureImportances.png](Images/FeatureImportances.png)
 
 
 ### Recommendations for Future Analysis
