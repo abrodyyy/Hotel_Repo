@@ -164,7 +164,7 @@ Interpretation of our logistic regression scores:
 - Our precision increased to 88% and the recall also increased to 79%.
 - The changes in pre-processing the data allowed for greater precision in the accuracy testing. 
 
-- Using ‘feature_importances_’ we were able to get an array of data that tells us how important a feature was to the model prediction. From there Numpy was used to sort the feature by importance and label which column it belonged to. We can see from the data that the ‘Is_Canceled’ column was most utilized at 16.97%, followed by ‘days_in_waiting_list’ at 12.32%
+- Using ‘feature_importances_’ we were able to get an array of data that tells us how important a feature was to the model prediction. From there Numpy was used to sort the feature by importance and label which column it belonged to. We can see from the data that the ‘days_in_waiting_list’ column was most utilized at 12.32%, followed by 'deposit_type_no_deposit', 'market_segment_online_TA', 'lead_time' and 'country_Other'.
 
 
 ![OptimizingModel.png](Images/OptimizingModel.png)
