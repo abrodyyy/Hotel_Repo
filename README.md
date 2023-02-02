@@ -84,3 +84,18 @@
 - What would you include or change if you had more time?
 
 ### Recommendations for Future Analysis
+
+Added 
+
+Optimizing the Model & Feature Importances
+For optimizing the model, the way the data was processed changed.
+
+The countries were encoded and the “other” country category was included with a count of 18,102
+
+Our precision increased to 88% and the recall also increased to 79%.
+
+The changes in pre-processing the data allowed for greater precision in the accuracy testing.
+
+Using ‘feature_importances_’ we were able to get an array of data that tells us how important a feature was to the model prediction. From there Numpy was used to sort the feature by importance and label which column it belonged to. We can see from the data that the ‘days_in_waiting_list’ column was most utilized at 12.32%, followed by 'deposit_type_no_deposit', 'market_segment_online_TA', 'lead_time' and 'country_Other'.
+
+OptimizingModel.png
