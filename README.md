@@ -169,8 +169,8 @@ Interpretation of our logistic regression scores:
 
 ![OptimizingModel.png](Images/OptimizingModel.png)
 
-**Feature Importances (Top 10):**
-![FeatureImportances.png](Images/FeatureImportances.png)
+**Feature Importances:**
+![updatedFeatureImportances.png](Images/updatedFeatureImportances.png)
 
 
 ### Recommendations for Future Analysis
