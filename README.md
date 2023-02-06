@@ -81,7 +81,7 @@ We also split the dataset by hotel type. After creating different initial visual
 **Analysis Phase**
 - **Bookings & Cancellations Per Month** 
 
-After grouping our data to analyze the trends we could observe per month, we found that overall  the months with the highest booking amount were the months of August, closely followed by July. Additionally, we found these months contained the highest amount of cancellations per month, followed closely by June and September.
+After grouping our data to analyze the trends we could observe per month, we found that overall  the months with the highest booking amount were the months of August, closely followed by July. Additionally, we found these months contained the highest amount of cancellations per month, followed closely by July and May.
 
 ![BookingsPerMonth.png](Images/BookingsPerMonth.png)
 ![CancellationsPerMonth.png](Images/CancellationsPerMonth.png)
