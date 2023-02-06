@@ -1,22 +1,6 @@
 # Final Project: Hotel Cancellation Forecast 
 
-### Current Status of Project: Segment 2 finished
-
-**Segment 2:**
-- Create a detailed Readme report on current status of project, links to data, slide deck, other important references
-- Machine learning model with confusion matrix and accuracy score
-- Updated database 
-- Description of the data, questions the team originally planned to answer, EDA, analysis phase and technologies
-- Draft Google Slides presentation
-
-**Challenges:**
-- We are continuing to try to optimize our model for a better accuracy score. Right now we have an 88% accuracy score for a Random Forrest Model
-
-**Plans for future work:**
-- Individually, continue to try and optimize our model for higher accuracy scores 
-- Work on the Google Slides Presentation
-- Work on finalizing our Tableau
-
+### Current Status of Project: Segment 3 finished
 
 ## Background and Purpose 
 **Topic:** Can you predict if a customer is going to cancel their reservation based on their hotel booking?
