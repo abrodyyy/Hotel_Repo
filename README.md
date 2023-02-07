@@ -99,7 +99,7 @@ The observations shown above can also be supported by additional analysis' of th
 
 - **Lead Time vs Bookings**
 
-Lastly, we analyze the column of lead time to investigate whether there was a trend in this column or not. To make our observations faster, we created a boxplot containing the boxplots of lead time versus the booking status of confirmed and cancelled. We noticed a higher mean of lead times in cancellations than confirmations, which leads us to believe that the longer a customer makes their reservation, the more likely they are to cancel their bookings. 
+Lastly, we analyze the column of lead time to investigate whether there was a trend in this column or not. To make our observations faster, we created a boxplot containing the boxplots of lead time versus the booking status of confirmed and cancelled. We noticed a higher mean of lead times in cancellations than confirmations, but interestedly enough, the longer out the customer booked out their reservation, the less likely they are to cancel.
 
 ![LeadTime.png](Images/LeadTime.png)
 
