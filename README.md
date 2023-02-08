@@ -60,7 +60,7 @@
 - [Exploratory Data Analysis Notebook](https://github.com/abrodyyy/Hotel_Repo/blob/main/Hotel_ExploratoryAnalysis.ipynb)
 - [Preprocessing Data &  Machine Learning Model Notebook](https://github.com/abrodyyy/Hotel_Repo/blob/main/Hotels_Preprocessing_MLModel.ipynb)
 - [Optimizing the ML Model](https://github.com/abrodyyy/Hotel_Repo/blob/main/Optimizing_ML_Model.ipynb)
-- [Interactive Dashboard](https://public.tableau.com/app/profile/alexandra.brody/viz/Hotel_Bookings_EDA/HotelBookingsExploratoryDataAnalysis?publish=yes)
+- [Interactive Dashboard](https://public.tableau.com/app/profile/alexandra.brody/viz/Hotel_Bookings_EDA/HotelBookingsDataAnalysis)
 
 ### Description of the EDA & Analysis phase 
 
